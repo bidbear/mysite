@@ -53,7 +53,7 @@ def autoreply(request):
         if msg_type == 'text':
             content = "您好,欢迎来到Python大学习!希望我们可以一起进步!"
             replyMsg = TextMsg(toUser, fromUser, content)
-            print "成功了!!!!!!!!!!!!!!!!!!!"
+            print ("成功了!!!!!!!!!!!!!!!!!!!")
             print replyMsg
             return replyMsg.send()
 
