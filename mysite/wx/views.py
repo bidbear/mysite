@@ -18,7 +18,7 @@ def wx(request):
         timestamp = request.GET.get('timestamp', '')
         nonce = request.GET.get('nonce', '')
         echostr = request.GET.get('echostr', '')
-        print(signature)
+        #print(signature)
         #服务器配置中的token
         token = 'X4v0VI1NnwoN00WdqvqjS46sw3bsVdQp'
         #把参数放到list中排序后合成一个字符串，再用sha1加密得到新的字符串与微信发来的signature对比，如果相同就返回echostr给服务器，校验通过
@@ -26,7 +26,7 @@ def wx(request):
         hashlist.sort()
         hashstr = ''.join([s for s in hashlist]).encode('utf-8')
         hashstr = hashlib.sha1(hashstr).hexdigest()
-        print(hashstr)
+        #print(hashstr)
         if hashstr == signature:
           return HttpResponse(echostr)
         else:
@@ -54,7 +54,7 @@ def autoreply(request):
             content = "您好,欢迎来到Python大学习!希望我们可以一起进步!"
             replyMsg = TextMsg(toUser, fromUser, content)
             print ("成功了!!!!!!!!!!!!!!!!!!!")
-            print replyMsg
+            print (replyMsg)
             return replyMsg.send()
 
         elif msg_type == 'image':
