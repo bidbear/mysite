@@ -32,5 +32,7 @@ def wx(request):
         else:
           return HttpResponse("field")
     else:
-        #othercontent = autoreply(request)
+        autoreply(request)
         return HttpResponse('error')
+def autoreply(request):
+    pass
