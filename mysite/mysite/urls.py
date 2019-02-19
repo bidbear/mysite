@@ -19,5 +19,5 @@ from wx import views
 urlpatterns = [
     path('',views.index),
     path('admin/', admin.site.urls),
-    path('',views.wx),
+    path('wx',views.wx),
 ]
