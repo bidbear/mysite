@@ -4,10 +4,20 @@ from django.utils.encoding import smart_str
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse
 from django.shortcuts import render
+import urllib
+import urllib.request
 
-# Create your views here.
+
 def index(request):
-    return render(request,'index.html')
+    
+    data={}
+    url_parame=urllib.parse.urlencode(data)
+    url="hhttps://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx32ed607e6951016c&secret=e65acf0f687135c8f953f26f52cdb2d0"
+    all_url=url+url_parame
+    data=urllib.request.urlopen(all_url).read()
+    record=data.decode('UTF-8')
+    print(record)
+
 
 #django默认开启csrf防护，这里使用@csrf_exempt去掉防护    
 @csrf_exempt
@@ -34,6 +44,7 @@ def wx(request):
     else:
         othercontent = autoreply(request)
         return HttpResponse(othercontent)
+    #get_(request)
 import xml.etree.ElementTree as ET
 
 @csrf_exempt
