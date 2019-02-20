@@ -12,12 +12,12 @@ def index(request):
     
     data={}
     url_parame=urllib.parse.urlencode(data)
-    url="hhttps://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx32ed607e6951016c&secret=e65acf0f687135c8f953f26f52cdb2d0"
+    url="https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx32ed607e6951016c&secret=e65acf0f687135c8f953f26f52cdb2d0"
     all_url=url+url_parame
     data=urllib.request.urlopen(all_url).read()
     record=data.decode('UTF-8')
     print(record)
-
+    return render(request,'index.html')
 
 #django默认开启csrf防护，这里使用@csrf_exempt去掉防护    
 @csrf_exempt
