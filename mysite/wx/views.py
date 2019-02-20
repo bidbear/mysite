@@ -16,7 +16,7 @@ def index(request):
     all_url=url+url_parame
     data=urllib.request.urlopen(all_url).read()
     record=data.decode('UTF-8')
-    print(record)
+    print(record.access_token)
     return render(request,'index.html')
 
 #django默认开启csrf防护，这里使用@csrf_exempt去掉防护    
