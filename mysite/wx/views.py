@@ -6,7 +6,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 import urllib
 import urllib.request
-
+from .models import Wx_Access_Token
 
 def index(request):
     
@@ -16,7 +16,13 @@ def index(request):
     all_url=url+url_parame
     data=urllib.request.urlopen(all_url).read()
     record=json.loads(data.decode('UTF-8'))
-    print(record['access_token'])
+    #print(record['access_token'])
+    try:
+        add_data=Wx_Access_Token(access_token=record)
+        add_data.save()
+    except Exception as e:
+        raise e
+    
     return render(request,'index.html')
 
 #django默认开启csrf防护，这里使用@csrf_exempt去掉防护    
