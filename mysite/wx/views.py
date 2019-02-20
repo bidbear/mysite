@@ -35,6 +35,8 @@ def wx(request):
         othercontent = autoreply(request)
         return HttpResponse(othercontent)
 import xml.etree.ElementTree as ET
+
+@csrf_exempt
 def autoreply(request):
     try:
         webData = request.body

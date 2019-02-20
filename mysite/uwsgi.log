@@ -1,0 +1,941 @@
+*** Starting uWSGI 2.0.18 (64bit) on [Tue Feb 19 15:41:36 2019] ***
+compiled with version: 4.8.5 20150623 (Red Hat 4.8.5-36) on 19 February 2019 03:21:04
+os: Linux-3.10.0-957.1.3.el7.x86_64 #1 SMP Thu Nov 29 14:49:43 UTC 2018
+nodename: iZ2zebvn3cjkequemgnzr0Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /data/wwwroot/mysite/mysite
+detected binary path: /data/env/pyweb/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /data/wwwroot/mysite/mysite
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 7270
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (127.0.0.1:8997).
+bind(): Address already in use [core/socket.c line 769]
+*** Starting uWSGI 2.0.18 (64bit) on [Tue Feb 19 15:54:04 2019] ***
+compiled with version: 4.8.5 20150623 (Red Hat 4.8.5-36) on 19 February 2019 03:21:04
+os: Linux-3.10.0-957.1.3.el7.x86_64 #1 SMP Thu Nov 29 14:49:43 UTC 2018
+nodename: iZ2zebvn3cjkequemgnzr0Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /data/wwwroot/mysite/mysite
+detected binary path: /data/env/pyweb/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /data/wwwroot/mysite/mysite
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 7270
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8997 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.6 (default, Feb 19 2019, 11:11:08)  [GCC 4.8.5 20150623 (Red Hat 4.8.5-36)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x14d2d60
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 291680 bytes (284 KB) for 4 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x14d2d60 pid: 30929 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (pid: 30929, cores: 1)
+spawned uWSGI worker 2 (pid: 30931, cores: 1)
+spawned uWSGI worker 3 (pid: 30932, cores: 1)
+spawned uWSGI worker 4 (pid: 30933, cores: 1)
+[pid: 30931|app: 0|req: 1/1] 113.44.95.96 () {48 vars in 869 bytes} [Tue Feb 19 07:54:21 2019] GET / => generated 148 bytes in 19 msecs (HTTP/1.1 200) 3 headers in 109 bytes (1 switches on core 0)
+[pid: 30932|app: 0|req: 1/2] 113.44.95.96 () {48 vars in 869 bytes} [Tue Feb 19 07:54:22 2019] GET / => generated 148 bytes in 20 msecs (HTTP/1.1 200) 3 headers in 109 bytes (1 switches on core 0)
+[pid: 30931|app: 0|req: 2/3] 113.44.95.96 () {48 vars in 869 bytes} [Tue Feb 19 07:54:22 2019] GET / => generated 148 bytes in 1 msecs (HTTP/1.1 200) 3 headers in 109 bytes (1 switches on core 0)
+Not Found: /favicon.ico
+[pid: 30931|app: 0|req: 3/4] 113.44.95.96 () {40 vars in 636 bytes} [Tue Feb 19 07:54:25 2019] GET /favicon.ico => generated 2172 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Internal Server Error: /wx
+Traceback (most recent call last):
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/base.py", line 137, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view wx.views.wx didn't return an HttpResponse object. It returned None instead.
+[pid: 30933|app: 0|req: 1/5] 113.44.95.96 () {46 vars in 842 bytes} [Tue Feb 19 07:54:27 2019] GET /wx => generated 49406 bytes in 44 msecs (HTTP/1.1 500) 4 headers in 129 bytes (1 switches on core 0)
+[pid: 30931|app: 0|req: 4/6] 113.44.95.96 () {46 vars in 850 bytes} [Tue Feb 19 07:54:34 2019] GET /admin/ => generated 0 bytes in 10 msecs (HTTP/1.1 302) 7 headers in 265 bytes (1 switches on core 0)
+[pid: 30932|app: 0|req: 2/7] 113.44.95.96 () {46 vars in 887 bytes} [Tue Feb 19 07:54:34 2019] GET /admin/login/?next=/admin/ => generated 1819 bytes in 30 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+[pid: 30931|app: 0|req: 5/8] 113.44.95.96 () {48 vars in 918 bytes} [Tue Feb 19 08:01:59 2019] GET /admin/login/?next=/admin/ => generated 1819 bytes in 19 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+[pid: 30932|app: 0|req: 3/9] 113.44.95.96 () {48 vars in 918 bytes} [Tue Feb 19 08:02:01 2019] GET /admin/login/?next=/admin/ => generated 1819 bytes in 13 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+[pid: 30931|app: 0|req: 6/10] 113.44.95.96 () {48 vars in 918 bytes} [Tue Feb 19 08:03:02 2019] GET /admin/login/?next=/admin/ => generated 1819 bytes in 13 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+[pid: 30932|app: 0|req: 4/11] 113.44.95.96 () {48 vars in 918 bytes} [Tue Feb 19 08:03:04 2019] GET /admin/login/?next=/admin/ => generated 1819 bytes in 14 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+[pid: 30931|app: 0|req: 7/12] 113.44.95.96 () {48 vars in 918 bytes} [Tue Feb 19 08:03:05 2019] GET /admin/login/?next=/admin/ => generated 1819 bytes in 16 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+[pid: 30933|app: 0|req: 2/13] 113.44.95.96 () {48 vars in 918 bytes} [Tue Feb 19 08:03:06 2019] GET /admin/login/?next=/admin/ => generated 1819 bytes in 32 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+[pid: 30931|app: 0|req: 8/14] 113.44.95.96 () {48 vars in 918 bytes} [Tue Feb 19 08:03:06 2019] GET /admin/login/?next=/admin/ => generated 1819 bytes in 40 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+[pid: 30931|app: 0|req: 9/15] 113.44.95.96 () {48 vars in 918 bytes} [Tue Feb 19 08:04:12 2019] GET /admin/login/?next=/admin/ => generated 1819 bytes in 12 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+[pid: 30932|app: 0|req: 5/16] 113.44.95.96 () {48 vars in 918 bytes} [Tue Feb 19 08:04:13 2019] GET /admin/login/?next=/admin/ => generated 1819 bytes in 42 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.18 (64bit) on [Tue Feb 19 16:05:29 2019] ***
+compiled with version: 4.8.5 20150623 (Red Hat 4.8.5-36) on 19 February 2019 03:21:04
+os: Linux-3.10.0-957.1.3.el7.x86_64 #1 SMP Thu Nov 29 14:49:43 UTC 2018
+nodename: iZ2zebvn3cjkequemgnzr0Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /data/wwwroot/mysite/mysite
+detected binary path: /data/env/pyweb/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /data/wwwroot/mysite/mysite
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 7270
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8997 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.6 (default, Feb 19 2019, 11:11:08)  [GCC 4.8.5 20150623 (Red Hat 4.8.5-36)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1cb9d60
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 291680 bytes (284 KB) for 4 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x1cb9d60 pid: 31013 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (pid: 31013, cores: 1)
+spawned uWSGI worker 2 (pid: 31015, cores: 1)
+spawned uWSGI worker 3 (pid: 31016, cores: 1)
+spawned uWSGI worker 4 (pid: 31017, cores: 1)
+[pid: 31017|app: 0|req: 1/1] 113.44.95.96 () {48 vars in 918 bytes} [Tue Feb 19 08:05:41 2019] GET /admin/login/?next=/admin/ => generated 1819 bytes in 48 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+[pid: 31016|app: 0|req: 1/2] 113.44.95.96 () {48 vars in 918 bytes} [Tue Feb 19 08:05:42 2019] GET /admin/login/?next=/admin/ => generated 1819 bytes in 46 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+Not Found: /favicon.ico
+[pid: 31017|app: 0|req: 2/3] 113.44.95.96 () {40 vars in 636 bytes} [Tue Feb 19 08:05:47 2019] GET /favicon.ico => generated 2173 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 31015|app: 0|req: 1/4] 113.44.95.96 () {46 vars in 850 bytes} [Tue Feb 19 08:05:48 2019] GET /admin/ => generated 0 bytes in 22 msecs (HTTP/1.1 302) 7 headers in 265 bytes (1 switches on core 0)
+[pid: 31017|app: 0|req: 3/5] 113.44.95.96 () {46 vars in 887 bytes} [Tue Feb 19 08:05:48 2019] GET /admin/login/?next=/admin/ => generated 1819 bytes in 18 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+Not Found: /ad
+[pid: 31016|app: 0|req: 2/6] 113.44.95.96 () {46 vars in 842 bytes} [Tue Feb 19 08:05:52 2019] GET /ad => generated 2146 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 31016|app: 0|req: 3/7] 113.44.95.96 () {46 vars in 842 bytes} [Tue Feb 19 08:05:57 2019] GET /wx => generated 0 bytes in 0 msecs (HTTP/1.1 301) 3 headers in 109 bytes (1 switches on core 0)
+Internal Server Error: /wx/
+Traceback (most recent call last):
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/base.py", line 137, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view wx.views.wx didn't return an HttpResponse object. It returned None instead.
+[pid: 31015|app: 0|req: 2/8] 113.44.95.96 () {46 vars in 844 bytes} [Tue Feb 19 08:05:57 2019] GET /wx/ => generated 49456 bytes in 33 msecs (HTTP/1.1 500) 4 headers in 129 bytes (1 switches on core 0)
+Not Found: /ad
+[pid: 31017|app: 0|req: 4/9] 42.236.10.84 () {42 vars in 700 bytes} [Tue Feb 19 08:05:57 2019] GET /ad => generated 2146 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 31017|app: 0|req: 5/10] 113.44.95.96 () {46 vars in 838 bytes} [Tue Feb 19 08:06:00 2019] GET / => generated 148 bytes in 1 msecs (HTTP/1.1 200) 3 headers in 109 bytes (1 switches on core 0)
+[pid: 31016|app: 0|req: 4/11] 113.44.95.96 () {50 vars in 891 bytes} [Tue Feb 19 08:06:04 2019] GET / => generated 148 bytes in 1 msecs (HTTP/1.1 200) 3 headers in 109 bytes (1 switches on core 0)
+Not Found: /favicon.ico
+[pid: 31013|app: 0|req: 1/12] 113.44.95.96 () {50 vars in 868 bytes} [Tue Feb 19 08:06:05 2019] GET /favicon.ico => generated 2173 bytes in 10 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 31017|app: 0|req: 6/13] 113.44.95.96 () {50 vars in 891 bytes} [Tue Feb 19 08:06:05 2019] GET / => generated 148 bytes in 1 msecs (HTTP/1.1 200) 3 headers in 109 bytes (1 switches on core 0)
+Not Found: /favicon.ico
+[pid: 31017|app: 0|req: 7/14] 113.44.95.96 () {50 vars in 868 bytes} [Tue Feb 19 08:06:05 2019] GET /favicon.ico => generated 2173 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 31015|app: 0|req: 3/15] 113.44.95.96 () {50 vars in 891 bytes} [Tue Feb 19 08:06:05 2019] GET / => generated 148 bytes in 9 msecs (HTTP/1.1 200) 3 headers in 109 bytes (1 switches on core 0)
+Not Found: /favicon.ico
+[pid: 31016|app: 0|req: 5/16] 113.44.95.96 () {50 vars in 868 bytes} [Tue Feb 19 08:06:05 2019] GET /favicon.ico => generated 2173 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 31017|app: 0|req: 8/17] 113.44.95.96 () {50 vars in 891 bytes} [Tue Feb 19 08:06:05 2019] GET / => generated 148 bytes in 1 msecs (HTTP/1.1 200) 3 headers in 109 bytes (1 switches on core 0)
+[pid: 31016|app: 0|req: 6/18] 113.44.95.96 () {50 vars in 891 bytes} [Tue Feb 19 08:06:06 2019] GET / => generated 148 bytes in 1 msecs (HTTP/1.1 200) 3 headers in 109 bytes (1 switches on core 0)
+Not Found: /favicon.ico
+[pid: 31013|app: 0|req: 2/19] 113.44.95.96 () {50 vars in 868 bytes} [Tue Feb 19 08:06:06 2019] GET /favicon.ico => generated 2173 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 31017|app: 0|req: 9/20] 113.44.95.96 () {50 vars in 891 bytes} [Tue Feb 19 08:06:06 2019] GET / => generated 148 bytes in 1 msecs (HTTP/1.1 200) 3 headers in 109 bytes (1 switches on core 0)
+Not Found: /favicon.ico
+[pid: 31016|app: 0|req: 7/21] 113.44.95.96 () {50 vars in 868 bytes} [Tue Feb 19 08:06:06 2019] GET /favicon.ico => generated 2173 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 31017|app: 0|req: 10/22] 113.44.95.96 () {50 vars in 891 bytes} [Tue Feb 19 08:06:06 2019] GET / => generated 148 bytes in 1 msecs (HTTP/1.1 200) 3 headers in 109 bytes (1 switches on core 0)
+[pid: 31015|app: 0|req: 4/23] 113.44.95.96 () {50 vars in 891 bytes} [Tue Feb 19 08:06:06 2019] GET / => generated 148 bytes in 1 msecs (HTTP/1.1 200) 3 headers in 109 bytes (1 switches on core 0)
+Not Found: /favicon.ico
+[pid: 31013|app: 0|req: 3/24] 113.44.95.96 () {50 vars in 868 bytes} [Tue Feb 19 08:06:06 2019] GET /favicon.ico => generated 2173 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /favicon.ico
+[pid: 31017|app: 0|req: 11/25] 113.44.95.96 () {50 vars in 868 bytes} [Tue Feb 19 08:06:06 2019] GET /favicon.ico => generated 2173 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /ad
+[pid: 31017|app: 0|req: 12/26] 180.163.220.5 () {42 vars in 700 bytes} [Tue Feb 19 08:06:12 2019] GET /ad => generated 2146 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 31013|app: 0|req: 4/27] 113.44.95.96 () {46 vars in 850 bytes} [Tue Feb 19 08:06:13 2019] GET /admin/ => generated 0 bytes in 10 msecs (HTTP/1.1 302) 7 headers in 265 bytes (1 switches on core 0)
+[pid: 31017|app: 0|req: 13/28] 113.44.95.96 () {46 vars in 887 bytes} [Tue Feb 19 08:06:13 2019] GET /admin/login/?next=/admin/ => generated 1819 bytes in 14 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+[pid: 31016|app: 0|req: 8/29] 113.44.95.96 () {48 vars in 918 bytes} [Tue Feb 19 08:06:15 2019] GET /admin/login/?next=/admin/ => generated 1819 bytes in 13 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+[pid: 31017|app: 0|req: 14/30] 113.44.95.96 () {48 vars in 918 bytes} [Tue Feb 19 08:07:53 2019] GET /admin/login/?next=/admin/ => generated 1819 bytes in 41 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+[pid: 31016|app: 0|req: 9/31] 113.44.95.96 () {48 vars in 918 bytes} [Tue Feb 19 08:07:54 2019] GET /admin/login/?next=/admin/ => generated 1819 bytes in 13 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+[pid: 31015|app: 0|req: 5/32] 113.44.95.96 () {48 vars in 918 bytes} [Tue Feb 19 08:07:55 2019] GET /admin/login/?next=/admin/ => generated 1819 bytes in 18 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+[pid: 31017|app: 0|req: 15/33] 113.44.95.96 () {48 vars in 918 bytes} [Tue Feb 19 08:07:56 2019] GET /admin/login/?next=/admin/ => generated 1819 bytes in 13 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+[pid: 31016|app: 0|req: 10/34] 113.44.95.96 () {48 vars in 918 bytes} [Tue Feb 19 08:07:58 2019] GET /admin/login/?next=/admin/ => generated 1819 bytes in 41 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+[pid: 31017|app: 0|req: 16/35] 113.44.95.96 () {50 vars in 940 bytes} [Tue Feb 19 08:08:00 2019] GET /admin/login/?next=/admin/ => generated 1819 bytes in 13 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+[pid: 31015|app: 0|req: 6/36] 113.44.95.96 () {50 vars in 940 bytes} [Tue Feb 19 08:08:00 2019] GET /admin/login/?next=/admin/ => generated 1819 bytes in 38 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+[pid: 31017|app: 0|req: 17/37] 113.44.95.96 () {50 vars in 940 bytes} [Tue Feb 19 08:08:01 2019] GET /admin/login/?next=/admin/ => generated 1819 bytes in 14 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+[pid: 31016|app: 0|req: 11/38] 113.44.95.96 () {50 vars in 940 bytes} [Tue Feb 19 08:08:01 2019] GET /admin/login/?next=/admin/ => generated 1819 bytes in 13 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+[pid: 31017|app: 0|req: 18/39] 113.44.95.96 () {50 vars in 940 bytes} [Tue Feb 19 08:08:01 2019] GET /admin/login/?next=/admin/ => generated 1819 bytes in 13 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+[pid: 31015|app: 0|req: 7/40] 113.44.95.96 () {50 vars in 940 bytes} [Tue Feb 19 08:08:01 2019] GET /admin/login/?next=/admin/ => generated 1819 bytes in 20 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+[pid: 31017|app: 0|req: 19/41] 113.44.95.96 () {50 vars in 940 bytes} [Tue Feb 19 08:08:01 2019] GET /admin/login/?next=/admin/ => generated 1819 bytes in 20 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+[pid: 31016|app: 0|req: 12/42] 113.44.95.96 () {50 vars in 940 bytes} [Tue Feb 19 08:08:02 2019] GET /admin/login/?next=/admin/ => generated 1819 bytes in 13 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+[pid: 31015|app: 0|req: 8/43] 113.44.95.96 () {50 vars in 940 bytes} [Tue Feb 19 08:08:02 2019] GET /admin/login/?next=/admin/ => generated 1819 bytes in 12 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+[pid: 31013|app: 0|req: 5/44] 113.44.95.96 () {50 vars in 940 bytes} [Tue Feb 19 08:08:02 2019] GET /admin/login/?next=/admin/ => generated 1819 bytes in 24 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+[pid: 31017|app: 0|req: 20/45] 113.44.95.96 () {50 vars in 940 bytes} [Tue Feb 19 08:08:02 2019] GET /admin/login/?next=/admin/ => generated 1819 bytes in 12 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+[pid: 31015|app: 0|req: 9/46] 113.44.95.96 () {50 vars in 940 bytes} [Tue Feb 19 08:08:02 2019] GET /admin/login/?next=/admin/ => generated 1819 bytes in 12 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+[pid: 31016|app: 0|req: 13/47] 113.44.95.96 () {50 vars in 940 bytes} [Tue Feb 19 08:08:02 2019] GET /admin/login/?next=/admin/ => generated 1819 bytes in 12 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+[pid: 31013|app: 0|req: 6/48] 113.44.95.96 () {50 vars in 940 bytes} [Tue Feb 19 08:08:02 2019] GET /admin/login/?next=/admin/ => generated 1819 bytes in 15 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+[pid: 31017|app: 0|req: 21/49] 113.44.95.96 () {50 vars in 940 bytes} [Tue Feb 19 08:08:02 2019] GET /admin/login/?next=/admin/ => generated 1819 bytes in 14 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+[pid: 31016|app: 0|req: 14/50] 113.44.95.96 () {50 vars in 940 bytes} [Tue Feb 19 08:08:02 2019] GET /admin/login/?next=/admin/ => generated 1819 bytes in 15 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+[pid: 31017|app: 0|req: 22/51] 113.44.95.96 () {50 vars in 940 bytes} [Tue Feb 19 08:08:02 2019] GET /admin/login/?next=/admin/ => generated 1819 bytes in 13 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+[pid: 31016|app: 0|req: 15/52] 113.44.95.96 () {50 vars in 940 bytes} [Tue Feb 19 08:08:02 2019] GET /admin/login/?next=/admin/ => generated 1819 bytes in 14 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+[pid: 31017|app: 0|req: 23/53] 113.44.95.96 () {50 vars in 940 bytes} [Tue Feb 19 08:08:02 2019] GET /admin/login/?next=/admin/ => generated 1819 bytes in 13 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+[pid: 31016|app: 0|req: 16/54] 113.44.95.96 () {50 vars in 940 bytes} [Tue Feb 19 08:08:02 2019] GET /admin/login/?next=/admin/ => generated 1819 bytes in 13 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+[pid: 31015|app: 0|req: 10/55] 113.44.95.96 () {50 vars in 940 bytes} [Tue Feb 19 08:08:02 2019] GET /admin/login/?next=/admin/ => generated 1819 bytes in 14 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+[pid: 31017|app: 0|req: 24/56] 113.44.95.96 () {50 vars in 940 bytes} [Tue Feb 19 08:08:03 2019] GET /admin/login/?next=/admin/ => generated 1819 bytes in 13 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+[pid: 31016|app: 0|req: 17/57] 113.44.95.96 () {50 vars in 940 bytes} [Tue Feb 19 08:08:03 2019] GET /admin/login/?next=/admin/ => generated 1819 bytes in 13 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+[pid: 31015|app: 0|req: 11/58] 113.44.95.96 () {50 vars in 940 bytes} [Tue Feb 19 08:08:03 2019] GET /admin/login/?next=/admin/ => generated 1819 bytes in 13 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+[pid: 31013|app: 0|req: 7/59] 113.44.95.96 () {50 vars in 940 bytes} [Tue Feb 19 08:08:03 2019] GET /admin/login/?next=/admin/ => generated 1819 bytes in 16 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+[pid: 31017|app: 0|req: 25/60] 113.44.95.96 () {50 vars in 940 bytes} [Tue Feb 19 08:08:03 2019] GET /admin/login/?next=/admin/ => generated 1819 bytes in 33 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+[pid: 31016|app: 0|req: 18/61] 113.44.95.96 () {50 vars in 940 bytes} [Tue Feb 19 08:08:03 2019] GET /admin/login/?next=/admin/ => generated 1819 bytes in 13 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+[pid: 31015|app: 0|req: 12/62] 113.44.95.96 () {50 vars in 940 bytes} [Tue Feb 19 08:08:03 2019] GET /admin/login/?next=/admin/ => generated 1819 bytes in 25 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+[pid: 31017|app: 0|req: 26/63] 113.44.95.96 () {50 vars in 940 bytes} [Tue Feb 19 08:08:03 2019] GET /admin/login/?next=/admin/ => generated 1819 bytes in 18 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+[pid: 31016|app: 0|req: 19/64] 113.44.95.96 () {50 vars in 940 bytes} [Tue Feb 19 08:08:03 2019] GET /admin/login/?next=/admin/ => generated 1819 bytes in 13 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+[pid: 31013|app: 0|req: 8/65] 113.44.95.96 () {50 vars in 940 bytes} [Tue Feb 19 08:08:03 2019] GET /admin/login/?next=/admin/ => generated 1819 bytes in 35 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+[pid: 31017|app: 0|req: 27/66] 113.44.95.96 () {50 vars in 940 bytes} [Tue Feb 19 08:08:03 2019] GET /admin/login/?next=/admin/ => generated 1819 bytes in 14 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+[pid: 31016|app: 0|req: 20/67] 113.44.95.96 () {50 vars in 940 bytes} [Tue Feb 19 08:08:03 2019] GET /admin/login/?next=/admin/ => generated 1819 bytes in 13 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+[pid: 31017|app: 0|req: 28/68] 113.44.95.96 () {50 vars in 940 bytes} [Tue Feb 19 08:08:04 2019] GET /admin/login/?next=/admin/ => generated 1819 bytes in 14 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+[pid: 31016|app: 0|req: 21/69] 113.44.95.96 () {50 vars in 940 bytes} [Tue Feb 19 08:08:04 2019] GET /admin/login/?next=/admin/ => generated 1819 bytes in 15 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+[pid: 31015|app: 0|req: 13/70] 113.44.95.96 () {48 vars in 918 bytes} [Tue Feb 19 08:08:08 2019] GET /admin/login/?next=/admin/ => generated 1819 bytes in 13 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+[pid: 31017|app: 0|req: 29/71] 113.44.95.96 () {48 vars in 918 bytes} [Tue Feb 19 08:08:23 2019] GET /admin/login/?next=/admin/ => generated 1819 bytes in 14 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+[pid: 31016|app: 0|req: 22/72] 113.44.95.96 () {48 vars in 918 bytes} [Tue Feb 19 08:08:26 2019] GET /admin/login/?next=/admin/ => generated 1819 bytes in 15 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+Internal Server Error: /wx/
+Traceback (most recent call last):
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/base.py", line 137, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view wx.views.wx didn't return an HttpResponse object. It returned None instead.
+[pid: 31017|app: 0|req: 30/73] 113.44.95.96 () {46 vars in 844 bytes} [Tue Feb 19 08:08:28 2019] GET /wx/ => generated 49456 bytes in 30 msecs (HTTP/1.1 500) 4 headers in 129 bytes (1 switches on core 0)
+[pid: 31017|app: 0|req: 31/74] 113.44.95.96 () {46 vars in 838 bytes} [Tue Feb 19 08:08:32 2019] GET / => generated 148 bytes in 1 msecs (HTTP/1.1 200) 3 headers in 109 bytes (1 switches on core 0)
+Internal Server Error: /wx/
+Traceback (most recent call last):
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/base.py", line 137, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view wx.views.wx didn't return an HttpResponse object. It returned None instead.
+[pid: 31017|app: 0|req: 32/75] 140.207.54.80 () {40 vars in 714 bytes} [Tue Feb 19 08:11:05 2019] GET /wx/?signature=a8441df76029bf664e72f12af89c3bef1a5fdaed&echostr=1522241934304460541&timestamp=1550563865&nonce=1697278039 => generated 49750 bytes in 31 msecs (HTTP/1.0 500) 4 headers in 129 bytes (1 switches on core 0)
+[pid: 31017|app: 0|req: 33/76] 61.151.207.141 () {40 vars in 728 bytes} [Tue Feb 19 08:12:05 2019] GET /wx => generated 0 bytes in 0 msecs (HTTP/1.1 301) 3 headers in 109 bytes (1 switches on core 0)
+[pid: 31013|app: 0|req: 9/77] 101.89.239.120 () {44 vars in 725 bytes} [Tue Feb 19 08:12:06 2019] GET /wx => generated 0 bytes in 0 msecs (HTTP/1.1 301) 3 headers in 109 bytes (1 switches on core 0)
+Internal Server Error: /wx/
+Traceback (most recent call last):
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/base.py", line 137, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view wx.views.wx didn't return an HttpResponse object. It returned None instead.
+[pid: 31015|app: 0|req: 14/78] 101.89.239.120 () {44 vars in 727 bytes} [Tue Feb 19 08:12:06 2019] GET /wx/ => generated 48703 bytes in 36 msecs (HTTP/1.1 500) 4 headers in 129 bytes (1 switches on core 0)
+[pid: 31017|app: 0|req: 34/79] 113.44.95.96 () {48 vars in 869 bytes} [Tue Feb 19 08:28:41 2019] GET / => generated 148 bytes in 1 msecs (HTTP/1.1 200) 3 headers in 109 bytes (1 switches on core 0)
+Not Found: /favicon.ico
+[pid: 31013|app: 0|req: 10/80] 113.44.95.96 () {40 vars in 636 bytes} [Tue Feb 19 08:28:47 2019] GET /favicon.ico => generated 2173 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Internal Server Error: /wx/
+Traceback (most recent call last):
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/base.py", line 137, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view wx.views.wx didn't return an HttpResponse object. It returned None instead.
+[pid: 31017|app: 0|req: 35/81] 140.207.54.80 () {40 vars in 713 bytes} [Tue Feb 19 08:28:57 2019] GET /wx/?signature=04ec8e275c66c15f074d8d4e9ebe43eaf1b1b0fb&echostr=4975912918156558027&timestamp=1550564937&nonce=2125698054 => generated 49749 bytes in 29 msecs (HTTP/1.0 500) 4 headers in 129 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.18 (64bit) on [Tue Feb 19 16:29:48 2019] ***
+compiled with version: 4.8.5 20150623 (Red Hat 4.8.5-36) on 19 February 2019 03:21:04
+os: Linux-3.10.0-957.1.3.el7.x86_64 #1 SMP Thu Nov 29 14:49:43 UTC 2018
+nodename: iZ2zebvn3cjkequemgnzr0Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /data/wwwroot/mysite/mysite
+detected binary path: /data/env/pyweb/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /data/wwwroot/mysite/mysite
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 7270
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8997 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.6 (default, Feb 19 2019, 11:11:08)  [GCC 4.8.5 20150623 (Red Hat 4.8.5-36)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1bd7d60
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 291680 bytes (284 KB) for 4 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x1bd7d60 pid: 31081 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (pid: 31081, cores: 1)
+spawned uWSGI worker 2 (pid: 31083, cores: 1)
+spawned uWSGI worker 3 (pid: 31084, cores: 1)
+spawned uWSGI worker 4 (pid: 31085, cores: 1)
+Internal Server Error: /wx/
+Traceback (most recent call last):
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "./wx/views.py", line 27, in wx
+    hashstr = hashlib.sha1(hashstr).hexdigest()
+TypeError: Unicode-objects must be encoded before hashing
+[pid: 31085|app: 0|req: 1/1] 140.207.54.80 () {40 vars in 712 bytes} [Tue Feb 19 08:29:57 2019] GET /wx/?signature=6b45ff405ebad0b63f333b30ed2fe29c66ad4a40&echostr=8629033034323050431&timestamp=1550564997&nonce=739632855 => generated 63872 bytes in 46 msecs (HTTP/1.0 500) 4 headers in 129 bytes (1 switches on core 0)
+Internal Server Error: /wx/
+Traceback (most recent call last):
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "./wx/views.py", line 27, in wx
+    hashstr = hashlib.sha1(hashstr).hexdigest()
+TypeError: Unicode-objects must be encoded before hashing
+[pid: 31085|app: 0|req: 2/2] 140.207.54.79 () {40 vars in 712 bytes} [Tue Feb 19 08:32:12 2019] GET /wx/?signature=de3d3b27cd5afc38a22f8605469852443b24d663&echostr=4507951830977478607&timestamp=1550565132&nonce=579301767 => generated 63872 bytes in 33 msecs (HTTP/1.0 500) 4 headers in 129 bytes (1 switches on core 0)
+[pid: 31085|app: 0|req: 3/3] 113.44.95.96 () {48 vars in 869 bytes} [Tue Feb 19 08:32:38 2019] GET / => generated 148 bytes in 8 msecs (HTTP/1.1 200) 3 headers in 109 bytes (1 switches on core 0)
+Internal Server Error: /wx/
+Traceback (most recent call last):
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "./wx/views.py", line 25, in wx
+    hashlist.sort()
+TypeError: '<' not supported between instances of 'NoneType' and 'str'
+[pid: 31081|app: 0|req: 1/4] 113.44.95.96 () {46 vars in 844 bytes} [Tue Feb 19 08:32:41 2019] GET /wx/ => generated 63052 bytes in 47 msecs (HTTP/1.1 500) 4 headers in 129 bytes (1 switches on core 0)
+[pid: 31085|app: 0|req: 4/5] 140.207.54.80 () {40 vars in 711 bytes} [Tue Feb 19 08:34:21 2019] GET /wx?signature=1188730aef93e9ebb61f0d7c70fc3dd93db0117e&echostr=9029655110581223407&timestamp=1550565261&nonce=1665411048 => generated 0 bytes in 0 msecs (HTTP/1.0 301) 3 headers in 226 bytes (1 switches on core 0)
+Internal Server Error: /wx/
+Traceback (most recent call last):
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "./wx/views.py", line 27, in wx
+    hashstr = hashlib.sha1(hashstr).hexdigest()
+TypeError: Unicode-objects must be encoded before hashing
+[pid: 31083|app: 0|req: 1/6] 140.207.54.80 () {40 vars in 713 bytes} [Tue Feb 19 08:34:21 2019] GET /wx/?signature=1188730aef93e9ebb61f0d7c70fc3dd93db0117e&echostr=9029655110581223407&timestamp=1550565261&nonce=1665411048 => generated 63884 bytes in 48 msecs (HTTP/1.0 500) 4 headers in 129 bytes (1 switches on core 0)
+[pid: 31085|app: 0|req: 5/7] 140.207.54.80 () {40 vars in 710 bytes} [Tue Feb 19 08:34:38 2019] GET /wx?signature=8972652643d4c4eb17fc59d297a53710e34dd499&echostr=838407996058894238&timestamp=1550565278&nonce=1421527967 => generated 0 bytes in 0 msecs (HTTP/1.0 301) 3 headers in 225 bytes (1 switches on core 0)
+Internal Server Error: /wx/
+Traceback (most recent call last):
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "./wx/views.py", line 27, in wx
+    hashstr = hashlib.sha1(hashstr).hexdigest()
+TypeError: Unicode-objects must be encoded before hashing
+[pid: 31085|app: 0|req: 6/8] 140.207.54.80 () {40 vars in 712 bytes} [Tue Feb 19 08:34:38 2019] GET /wx/?signature=8972652643d4c4eb17fc59d297a53710e34dd499&echostr=838407996058894238&timestamp=1550565278&nonce=1421527967 => generated 63874 bytes in 58 msecs (HTTP/1.0 500) 4 headers in 129 bytes (1 switches on core 0)
+[pid: 31085|app: 0|req: 7/9] 140.207.54.80 () {40 vars in 712 bytes} [Tue Feb 19 08:35:44 2019] GET /wx?signature=a2c6a04da82638a7df45ba09205d8763561574d7&echostr=6123155939084992485&timestamp=1550565344&nonce=2035248506 => generated 0 bytes in 0 msecs (HTTP/1.0 301) 3 headers in 226 bytes (1 switches on core 0)
+Internal Server Error: /wx/
+Traceback (most recent call last):
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "./wx/views.py", line 27, in wx
+    hashstr = hashlib.sha1(hashstr).hexdigest()
+TypeError: Unicode-objects must be encoded before hashing
+[pid: 31081|app: 0|req: 2/10] 140.207.54.79 () {40 vars in 714 bytes} [Tue Feb 19 08:35:44 2019] GET /wx/?signature=a2c6a04da82638a7df45ba09205d8763561574d7&echostr=6123155939084992485&timestamp=1550565344&nonce=2035248506 => generated 63885 bytes in 34 msecs (HTTP/1.0 500) 4 headers in 129 bytes (1 switches on core 0)
+[pid: 31085|app: 0|req: 8/11] 140.207.54.80 () {40 vars in 710 bytes} [Tue Feb 19 08:42:21 2019] GET /wx?signature=1c3ef8aa57a7682dc28cc8462c3cca3ee26851a4&echostr=486147212354512893&timestamp=1550565741&nonce=1019370012 => generated 0 bytes in 0 msecs (HTTP/1.0 301) 3 headers in 225 bytes (1 switches on core 0)
+Internal Server Error: /wx/
+Traceback (most recent call last):
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "./wx/views.py", line 27, in wx
+    hashstr = ''.join([s for s in hashlist])
+TypeError: Unicode-objects must be encoded before hashing
+[pid: 31081|app: 0|req: 3/12] 140.207.54.80 () {40 vars in 712 bytes} [Tue Feb 19 08:42:21 2019] GET /wx/?signature=1c3ef8aa57a7682dc28cc8462c3cca3ee26851a4&echostr=486147212354512893&timestamp=1550565741&nonce=1019370012 => generated 63875 bytes in 61 msecs (HTTP/1.0 500) 4 headers in 129 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.18 (64bit) on [Tue Feb 19 16:48:51 2019] ***
+compiled with version: 4.8.5 20150623 (Red Hat 4.8.5-36) on 19 February 2019 03:21:04
+os: Linux-3.10.0-957.1.3.el7.x86_64 #1 SMP Thu Nov 29 14:49:43 UTC 2018
+nodename: iZ2zebvn3cjkequemgnzr0Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /data/wwwroot/mysite/mysite
+detected binary path: /data/env/pyweb/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /data/wwwroot/mysite/mysite
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 7270
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8997 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.6 (default, Feb 19 2019, 11:11:08)  [GCC 4.8.5 20150623 (Red Hat 4.8.5-36)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x17a8d60
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 291680 bytes (284 KB) for 4 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x17a8d60 pid: 31186 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (pid: 31186, cores: 1)
+spawned uWSGI worker 2 (pid: 31188, cores: 1)
+spawned uWSGI worker 3 (pid: 31189, cores: 1)
+spawned uWSGI worker 4 (pid: 31190, cores: 1)
+[pid: 31188|app: 0|req: 1/1] 113.44.95.96 () {46 vars in 839 bytes} [Tue Feb 19 08:49:14 2019] GET / => generated 148 bytes in 20 msecs (HTTP/1.1 200) 3 headers in 109 bytes (1 switches on core 0)
+None
+Internal Server Error: /wx/
+Traceback (most recent call last):
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "./wx/views.py", line 26, in wx
+    hashlist.sort()
+TypeError: '<' not supported between instances of 'NoneType' and 'str'
+[pid: 31188|app: 0|req: 2/2] 113.44.95.96 () {46 vars in 844 bytes} [Tue Feb 19 08:56:26 2019] GET /wx/ => generated 62988 bytes in 37 msecs (HTTP/1.1 500) 4 headers in 129 bytes (1 switches on core 0)
+None
+Internal Server Error: /wx/
+Traceback (most recent call last):
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "./wx/views.py", line 26, in wx
+    hashlist.sort()
+TypeError: '<' not supported between instances of 'NoneType' and 'str'
+[pid: 31188|app: 0|req: 3/3] 113.44.95.96 () {48 vars in 875 bytes} [Tue Feb 19 09:01:15 2019] GET /wx/ => generated 63135 bytes in 35 msecs (HTTP/1.1 500) 4 headers in 129 bytes (1 switches on core 0)
+
+Internal Server Error: /wx/
+Traceback (most recent call last):
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "./wx/views.py", line 28, in wx
+    hashstr = hashlib.sha1(hashstr).hexdigest()
+TypeError: Unicode-objects must be encoded before hashing
+[pid: 31190|app: 0|req: 1/4] 113.44.95.96 () {48 vars in 875 bytes} [Tue Feb 19 09:01:17 2019] GET /wx/ => generated 63167 bytes in 51 msecs (HTTP/1.1 500) 4 headers in 129 bytes (1 switches on core 0)
+None
+Internal Server Error: /wx/
+Traceback (most recent call last):
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "./wx/views.py", line 26, in wx
+    hashlist.sort()
+TypeError: '<' not supported between instances of 'NoneType' and 'str'
+[pid: 31188|app: 0|req: 4/5] 113.44.95.96 () {48 vars in 875 bytes} [Tue Feb 19 09:01:19 2019] GET /wx/ => generated 63135 bytes in 56 msecs (HTTP/1.1 500) 4 headers in 129 bytes (1 switches on core 0)
+
+Internal Server Error: /wx/
+Traceback (most recent call last):
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "./wx/views.py", line 28, in wx
+    hashstr = hashlib.sha1(hashstr).hexdigest()
+TypeError: Unicode-objects must be encoded before hashing
+[pid: 31190|app: 0|req: 2/6] 113.44.95.96 () {48 vars in 875 bytes} [Tue Feb 19 09:01:21 2019] GET /wx/ => generated 63167 bytes in 52 msecs (HTTP/1.1 500) 4 headers in 129 bytes (1 switches on core 0)
+None
+Internal Server Error: /wx/
+Traceback (most recent call last):
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "./wx/views.py", line 26, in wx
+    hashlist.sort()
+TypeError: '<' not supported between instances of 'NoneType' and 'str'
+[pid: 31188|app: 0|req: 5/7] 113.44.95.96 () {48 vars in 875 bytes} [Tue Feb 19 09:01:25 2019] GET /wx/ => generated 63135 bytes in 34 msecs (HTTP/1.1 500) 4 headers in 129 bytes (1 switches on core 0)
+
+Internal Server Error: /wx/
+Traceback (most recent call last):
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "./wx/views.py", line 28, in wx
+    hashstr = hashlib.sha1(hashstr).hexdigest()
+TypeError: Unicode-objects must be encoded before hashing
+[pid: 31190|app: 0|req: 3/8] 113.44.95.96 () {48 vars in 875 bytes} [Tue Feb 19 09:01:26 2019] GET /wx/ => generated 63167 bytes in 58 msecs (HTTP/1.1 500) 4 headers in 129 bytes (1 switches on core 0)
+None
+Internal Server Error: /wx/
+Traceback (most recent call last):
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "./wx/views.py", line 26, in wx
+    hashlist.sort()
+TypeError: '<' not supported between instances of 'NoneType' and 'str'
+[pid: 31188|app: 0|req: 6/9] 113.44.95.96 () {50 vars in 897 bytes} [Tue Feb 19 09:01:29 2019] GET /wx/ => generated 63261 bytes in 33 msecs (HTTP/1.1 500) 4 headers in 129 bytes (1 switches on core 0)
+Not Found: /favicon.ico
+[pid: 31190|app: 0|req: 4/10] 113.44.95.96 () {50 vars in 871 bytes} [Tue Feb 19 09:01:29 2019] GET /favicon.ico => generated 2173 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+
+Internal Server Error: /wx/
+Traceback (most recent call last):
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "./wx/views.py", line 28, in wx
+    hashstr = hashlib.sha1(hashstr).hexdigest()
+TypeError: Unicode-objects must be encoded before hashing
+[pid: 31190|app: 0|req: 5/11] 113.44.95.96 () {50 vars in 897 bytes} [Tue Feb 19 09:01:30 2019] GET /wx/ => generated 63293 bytes in 33 msecs (HTTP/1.1 500) 4 headers in 129 bytes (1 switches on core 0)
+Not Found: /favicon.ico
+[pid: 31188|app: 0|req: 7/12] 113.44.95.96 () {50 vars in 871 bytes} [Tue Feb 19 09:01:31 2019] GET /favicon.ico => generated 2173 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+None
+Internal Server Error: /wx/
+Traceback (most recent call last):
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "./wx/views.py", line 26, in wx
+    hashlist.sort()
+TypeError: '<' not supported between instances of 'NoneType' and 'str'
+[pid: 31188|app: 0|req: 8/13] 113.44.95.96 () {50 vars in 897 bytes} [Tue Feb 19 09:01:31 2019] GET /wx/ => generated 63261 bytes in 34 msecs (HTTP/1.1 500) 4 headers in 129 bytes (1 switches on core 0)
+Not Found: /favicon.ico
+[pid: 31190|app: 0|req: 6/14] 113.44.95.96 () {50 vars in 871 bytes} [Tue Feb 19 09:01:32 2019] GET /favicon.ico => generated 2173 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /favicon.ico
+[pid: 31188|app: 0|req: 9/15] 113.44.95.96 () {40 vars in 636 bytes} [Tue Feb 19 09:02:33 2019] GET /favicon.ico => generated 2173 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 31189|app: 0|req: 1/16] 113.44.95.96 () {46 vars in 838 bytes} [Tue Feb 19 09:02:33 2019] GET / => generated 148 bytes in 19 msecs (HTTP/1.1 200) 3 headers in 109 bytes (1 switches on core 0)
+[pid: 31188|app: 0|req: 10/17] 113.44.95.96 () {48 vars in 869 bytes} [Tue Feb 19 09:02:49 2019] GET / => generated 148 bytes in 1 msecs (HTTP/1.1 200) 3 headers in 109 bytes (1 switches on core 0)
+None
+Internal Server Error: /wx/
+Traceback (most recent call last):
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "./wx/views.py", line 26, in wx
+    hashlist.sort()
+TypeError: '<' not supported between instances of 'NoneType' and 'str'
+[pid: 31188|app: 0|req: 11/18] 113.44.95.96 () {46 vars in 844 bytes} [Tue Feb 19 09:02:54 2019] GET /wx/ => generated 63000 bytes in 33 msecs (HTTP/1.1 500) 4 headers in 129 bytes (1 switches on core 0)
+[pid: 31188|app: 0|req: 12/19] 189.134.3.22 () {36 vars in 531 bytes} [Tue Feb 19 09:10:50 2019] GET / => generated 148 bytes in 1 msecs (HTTP/1.1 200) 3 headers in 109 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.18 (64bit) on [Tue Feb 19 17:13:23 2019] ***
+compiled with version: 4.8.5 20150623 (Red Hat 4.8.5-36) on 19 February 2019 03:21:04
+os: Linux-3.10.0-957.1.3.el7.x86_64 #1 SMP Thu Nov 29 14:49:43 UTC 2018
+nodename: iZ2zebvn3cjkequemgnzr0Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /data/wwwroot/mysite/mysite
+detected binary path: /data/env/pyweb/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /data/wwwroot/mysite/mysite
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 7270
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8997 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.6 (default, Feb 19 2019, 11:11:08)  [GCC 4.8.5 20150623 (Red Hat 4.8.5-36)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1163d60
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 291680 bytes (284 KB) for 4 cores
+*** Operational MODE: preforking ***
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/logging/config.py", line 558, in configure
+    handler = self.configure_handler(handlers[name])
+  File "/usr/local/python3/lib/python3.6/logging/config.py", line 731, in configure_handler
+    result = factory(**kwargs)
+  File "/usr/local/python3/lib/python3.6/logging/handlers.py", line 150, in __init__
+    BaseRotatingHandler.__init__(self, filename, mode, encoding, delay)
+  File "/usr/local/python3/lib/python3.6/logging/handlers.py", line 57, in __init__
+    logging.FileHandler.__init__(self, filename, mode, encoding, delay)
+  File "/usr/local/python3/lib/python3.6/logging/__init__.py", line 1031, in __init__
+    StreamHandler.__init__(self, self._open())
+  File "/usr/local/python3/lib/python3.6/logging/__init__.py", line 1060, in _open
+    return open(self.baseFilename, self.mode, encoding=self.encoding)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/log/all.log'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "./mysite/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/wsgi.py", line 12, in get_wsgi_application
+    django.setup(set_prefix=False)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/__init__.py", line 19, in setup
+    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/utils/log.py", line 76, in configure_logging
+    logging_config_func(logging_settings)
+  File "/usr/local/python3/lib/python3.6/logging/config.py", line 795, in dictConfig
+    dictConfigClass(config).configure()
+  File "/usr/local/python3/lib/python3.6/logging/config.py", line 566, in configure
+    '%r: %s' % (name, e))
+ValueError: Unable to configure handler 'default': [Errno 2] No such file or directory: '/home/log/all.log'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (pid: 31301, cores: 1)
+spawned uWSGI worker 2 (pid: 31303, cores: 1)
+spawned uWSGI worker 3 (pid: 31304, cores: 1)
+spawned uWSGI worker 4 (pid: 31305, cores: 1)
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/logging/config.py", line 558, in configure
+    handler = self.configure_handler(handlers[name])
+  File "/usr/local/python3/lib/python3.6/logging/config.py", line 731, in configure_handler
+    result = factory(**kwargs)
+  File "/usr/local/python3/lib/python3.6/logging/handlers.py", line 150, in __init__
+    BaseRotatingHandler.__init__(self, filename, mode, encoding, delay)
+  File "/usr/local/python3/lib/python3.6/logging/handlers.py", line 57, in __init__
+    logging.FileHandler.__init__(self, filename, mode, encoding, delay)
+  File "/usr/local/python3/lib/python3.6/logging/__init__.py", line 1031, in __init__
+    StreamHandler.__init__(self, self._open())
+  File "/usr/local/python3/lib/python3.6/logging/__init__.py", line 1060, in _open
+    return open(self.baseFilename, self.mode, encoding=self.encoding)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/log/all.log'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "./mysite/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/wsgi.py", line 12, in get_wsgi_application
+    django.setup(set_prefix=False)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/__init__.py", line 19, in setup
+    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/utils/log.py", line 76, in configure_logging
+    logging_config_func(logging_settings)
+  File "/usr/local/python3/lib/python3.6/logging/config.py", line 795, in dictConfig
+    dictConfigClass(config).configure()
+  File "/usr/local/python3/lib/python3.6/logging/config.py", line 566, in configure
+    '%r: %s' % (name, e))
+ValueError: Unable to configure handler 'default': [Errno 2] No such file or directory: '/home/log/all.log'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+--- no python application found, check your startup logs for errors ---
+[pid: 31305|app: -1|req: -1/1] 113.44.95.96 () {48 vars in 875 bytes} [Tue Feb 19 09:13:26 2019] GET /wx/ => generated 21 bytes in 5 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/logging/config.py", line 558, in configure
+    handler = self.configure_handler(handlers[name])
+  File "/usr/local/python3/lib/python3.6/logging/config.py", line 731, in configure_handler
+    result = factory(**kwargs)
+  File "/usr/local/python3/lib/python3.6/logging/handlers.py", line 150, in __init__
+    BaseRotatingHandler.__init__(self, filename, mode, encoding, delay)
+  File "/usr/local/python3/lib/python3.6/logging/handlers.py", line 57, in __init__
+    logging.FileHandler.__init__(self, filename, mode, encoding, delay)
+  File "/usr/local/python3/lib/python3.6/logging/__init__.py", line 1031, in __init__
+    StreamHandler.__init__(self, self._open())
+  File "/usr/local/python3/lib/python3.6/logging/__init__.py", line 1060, in _open
+    return open(self.baseFilename, self.mode, encoding=self.encoding)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/log/all.log'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "./mysite/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/wsgi.py", line 12, in get_wsgi_application
+    django.setup(set_prefix=False)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/__init__.py", line 19, in setup
+    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/utils/log.py", line 76, in configure_logging
+    logging_config_func(logging_settings)
+  File "/usr/local/python3/lib/python3.6/logging/config.py", line 795, in dictConfig
+    dictConfigClass(config).configure()
+  File "/usr/local/python3/lib/python3.6/logging/config.py", line 566, in configure
+    '%r: %s' % (name, e))
+ValueError: Unable to configure handler 'default': [Errno 2] No such file or directory: '/home/log/all.log'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+--- no python application found, check your startup logs for errors ---
+[pid: 31304|app: -1|req: -1/2] 113.44.95.96 () {48 vars in 875 bytes} [Tue Feb 19 09:13:27 2019] GET /wx/ => generated 21 bytes in 5 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/logging/config.py", line 558, in configure
+    handler = self.configure_handler(handlers[name])
+  File "/usr/local/python3/lib/python3.6/logging/config.py", line 731, in configure_handler
+    result = factory(**kwargs)
+  File "/usr/local/python3/lib/python3.6/logging/handlers.py", line 150, in __init__
+    BaseRotatingHandler.__init__(self, filename, mode, encoding, delay)
+  File "/usr/local/python3/lib/python3.6/logging/handlers.py", line 57, in __init__
+    logging.FileHandler.__init__(self, filename, mode, encoding, delay)
+  File "/usr/local/python3/lib/python3.6/logging/__init__.py", line 1031, in __init__
+    StreamHandler.__init__(self, self._open())
+  File "/usr/local/python3/lib/python3.6/logging/__init__.py", line 1060, in _open
+    return open(self.baseFilename, self.mode, encoding=self.encoding)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/log/all.log'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "./mysite/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/wsgi.py", line 12, in get_wsgi_application
+    django.setup(set_prefix=False)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/__init__.py", line 19, in setup
+    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/utils/log.py", line 76, in configure_logging
+    logging_config_func(logging_settings)
+  File "/usr/local/python3/lib/python3.6/logging/config.py", line 795, in dictConfig
+    dictConfigClass(config).configure()
+  File "/usr/local/python3/lib/python3.6/logging/config.py", line 566, in configure
+    '%r: %s' % (name, e))
+ValueError: Unable to configure handler 'default': [Errno 2] No such file or directory: '/home/log/all.log'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+--- no python application found, check your startup logs for errors ---
+[pid: 31301|app: -1|req: -1/3] 113.44.95.96 () {48 vars in 875 bytes} [Tue Feb 19 09:13:28 2019] GET /wx/ => generated 21 bytes in 5 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/logging/config.py", line 558, in configure
+    handler = self.configure_handler(handlers[name])
+  File "/usr/local/python3/lib/python3.6/logging/config.py", line 731, in configure_handler
+    result = factory(**kwargs)
+  File "/usr/local/python3/lib/python3.6/logging/handlers.py", line 150, in __init__
+    BaseRotatingHandler.__init__(self, filename, mode, encoding, delay)
+  File "/usr/local/python3/lib/python3.6/logging/handlers.py", line 57, in __init__
+    logging.FileHandler.__init__(self, filename, mode, encoding, delay)
+  File "/usr/local/python3/lib/python3.6/logging/__init__.py", line 1031, in __init__
+    StreamHandler.__init__(self, self._open())
+  File "/usr/local/python3/lib/python3.6/logging/__init__.py", line 1060, in _open
+    return open(self.baseFilename, self.mode, encoding=self.encoding)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/log/all.log'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "./mysite/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/wsgi.py", line 12, in get_wsgi_application
+    django.setup(set_prefix=False)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/__init__.py", line 19, in setup
+    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/utils/log.py", line 76, in configure_logging
+    logging_config_func(logging_settings)
+  File "/usr/local/python3/lib/python3.6/logging/config.py", line 795, in dictConfig
+    dictConfigClass(config).configure()
+  File "/usr/local/python3/lib/python3.6/logging/config.py", line 566, in configure
+    '%r: %s' % (name, e))
+ValueError: Unable to configure handler 'default': [Errno 2] No such file or directory: '/home/log/all.log'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+--- no python application found, check your startup logs for errors ---
+[pid: 31303|app: -1|req: -1/4] 113.44.95.96 () {48 vars in 875 bytes} [Tue Feb 19 09:13:33 2019] GET /wx/ => generated 21 bytes in 4 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/logging/config.py", line 558, in configure
+    handler = self.configure_handler(handlers[name])
+  File "/usr/local/python3/lib/python3.6/logging/config.py", line 731, in configure_handler
+    result = factory(**kwargs)
+  File "/usr/local/python3/lib/python3.6/logging/handlers.py", line 150, in __init__
+    BaseRotatingHandler.__init__(self, filename, mode, encoding, delay)
+  File "/usr/local/python3/lib/python3.6/logging/handlers.py", line 57, in __init__
+    logging.FileHandler.__init__(self, filename, mode, encoding, delay)
+  File "/usr/local/python3/lib/python3.6/logging/__init__.py", line 1031, in __init__
+    StreamHandler.__init__(self, self._open())
+  File "/usr/local/python3/lib/python3.6/logging/__init__.py", line 1060, in _open
+    return open(self.baseFilename, self.mode, encoding=self.encoding)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/log/all.log'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "./mysite/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/wsgi.py", line 12, in get_wsgi_application
+    django.setup(set_prefix=False)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/__init__.py", line 19, in setup
+    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/utils/log.py", line 76, in configure_logging
+    logging_config_func(logging_settings)
+  File "/usr/local/python3/lib/python3.6/logging/config.py", line 795, in dictConfig
+    dictConfigClass(config).configure()
+  File "/usr/local/python3/lib/python3.6/logging/config.py", line 566, in configure
+    '%r: %s' % (name, e))
+ValueError: Unable to configure handler 'default': [Errno 2] No such file or directory: '/home/log/all.log'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+--- no python application found, check your startup logs for errors ---
+[pid: 31303|app: -1|req: -1/5] 113.44.95.96 () {48 vars in 875 bytes} [Tue Feb 19 09:13:46 2019] GET /wx/ => generated 21 bytes in 4 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/logging/config.py", line 558, in configure
+    handler = self.configure_handler(handlers[name])
+  File "/usr/local/python3/lib/python3.6/logging/config.py", line 731, in configure_handler
+    result = factory(**kwargs)
+  File "/usr/local/python3/lib/python3.6/logging/handlers.py", line 150, in __init__
+    BaseRotatingHandler.__init__(self, filename, mode, encoding, delay)
+  File "/usr/local/python3/lib/python3.6/logging/handlers.py", line 57, in __init__
+    logging.FileHandler.__init__(self, filename, mode, encoding, delay)
+  File "/usr/local/python3/lib/python3.6/logging/__init__.py", line 1031, in __init__
+    StreamHandler.__init__(self, self._open())
+  File "/usr/local/python3/lib/python3.6/logging/__init__.py", line 1060, in _open
+    return open(self.baseFilename, self.mode, encoding=self.encoding)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/log/all.log'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "./mysite/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/wsgi.py", line 12, in get_wsgi_application
+    django.setup(set_prefix=False)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/__init__.py", line 19, in setup
+    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/utils/log.py", line 76, in configure_logging
+    logging_config_func(logging_settings)
+  File "/usr/local/python3/lib/python3.6/logging/config.py", line 795, in dictConfig
+    dictConfigClass(config).configure()
+  File "/usr/local/python3/lib/python3.6/logging/config.py", line 566, in configure
+    '%r: %s' % (name, e))
+ValueError: Unable to configure handler 'default': [Errno 2] No such file or directory: '/home/log/all.log'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+--- no python application found, check your startup logs for errors ---
+[pid: 31305|app: -1|req: -1/6] 113.44.95.96 () {48 vars in 875 bytes} [Tue Feb 19 09:13:47 2019] GET /wx/ => generated 21 bytes in 4 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+*** Starting uWSGI 2.0.18 (64bit) on [Tue Feb 19 17:18:28 2019] ***
+compiled with version: 4.8.5 20150623 (Red Hat 4.8.5-36) on 19 February 2019 03:21:04
+os: Linux-3.10.0-957.1.3.el7.x86_64 #1 SMP Thu Nov 29 14:49:43 UTC 2018
+nodename: iZ2zebvn3cjkequemgnzr0Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /data/wwwroot/mysite/mysite
+detected binary path: /data/env/pyweb/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /data/wwwroot/mysite/mysite
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 7270
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8997 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.6 (default, Feb 19 2019, 11:11:08)  [GCC 4.8.5 20150623 (Red Hat 4.8.5-36)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x28f6d60
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 291680 bytes (284 KB) for 4 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x28f6d60 pid: 31324 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (pid: 31324, cores: 1)
+spawned uWSGI worker 2 (pid: 31326, cores: 1)
+spawned uWSGI worker 3 (pid: 31327, cores: 1)
+spawned uWSGI worker 4 (pid: 31328, cores: 1)
+[pid: 31326|app: 0|req: 1/1] 113.44.95.96 () {48 vars in 875 bytes} [Tue Feb 19 09:18:40 2019] GET /wx/ => generated 104623 bytes in 74 msecs (HTTP/1.1 500) 4 headers in 130 bytes (1 switches on core 0)
+[pid: 31326|app: 0|req: 2/2] 113.44.95.96 () {48 vars in 876 bytes} [Tue Feb 19 09:22:36 2019] GET /wx/ => generated 104624 bytes in 55 msecs (HTTP/1.1 500) 4 headers in 130 bytes (1 switches on core 0)
+
+79efdcda11ff048c4045e3734f83b9f8f433c457
+[pid: 31326|app: 0|req: 3/3] 113.44.95.96 () {48 vars in 876 bytes} [Tue Feb 19 09:22:38 2019] GET /wx/ => generated 5 bytes in 4 msecs (HTTP/1.1 200) 3 headers in 107 bytes (1 switches on core 0)
+
+79efdcda11ff048c4045e3734f83b9f8f433c457
+[pid: 31324|app: 0|req: 1/4] 113.44.95.96 () {48 vars in 876 bytes} [Tue Feb 19 09:22:40 2019] GET /wx/ => generated 5 bytes in 9 msecs (HTTP/1.1 200) 3 headers in 107 bytes (1 switches on core 0)
+
+79efdcda11ff048c4045e3734f83b9f8f433c457
+[pid: 31328|app: 0|req: 1/5] 113.44.95.96 () {48 vars in 876 bytes} [Tue Feb 19 09:22:42 2019] GET /wx/ => generated 5 bytes in 9 msecs (HTTP/1.1 200) 3 headers in 107 bytes (1 switches on core 0)
+
+79efdcda11ff048c4045e3734f83b9f8f433c457
+[pid: 31326|app: 0|req: 4/6] 113.44.95.96 () {48 vars in 876 bytes} [Tue Feb 19 09:22:43 2019] GET /wx/ => generated 5 bytes in 0 msecs (HTTP/1.1 200) 3 headers in 107 bytes (1 switches on core 0)
+[pid: 31326|app: 0|req: 5/7] 140.207.54.80 () {40 vars in 710 bytes} [Tue Feb 19 09:22:49 2019] GET /wx?signature=444069e2f13ebaaeef5132014471495899669ee0&echostr=8820765901502541565&timestamp=1550568169&nonce=876469586 => generated 0 bytes in 1 msecs (HTTP/1.0 301) 3 headers in 225 bytes (1 switches on core 0)
+444069e2f13ebaaeef5132014471495899669ee0
+444069e2f13ebaaeef5132014471495899669ee0
+[pid: 31324|app: 0|req: 2/8] 140.207.54.79 () {40 vars in 712 bytes} [Tue Feb 19 09:22:49 2019] GET /wx/?signature=444069e2f13ebaaeef5132014471495899669ee0&echostr=8820765901502541565&timestamp=1550568169&nonce=876469586 => generated 19 bytes in 1 msecs (HTTP/1.0 200) 3 headers in 108 bytes (1 switches on core 0)
