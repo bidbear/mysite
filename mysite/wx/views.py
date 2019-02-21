@@ -56,7 +56,7 @@ def autoreply(request):
         toUser = FromUserName
         fromUser = ToUserName
   
-        if msg_type == 'image'::
+        if msg_type == 'image':
             content = "图片已收到,谢谢"
             replyMsg = TextMsg(toUser, fromUser, content)
             return replyMsg.send()
