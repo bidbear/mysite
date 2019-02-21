@@ -36,11 +36,7 @@ print("Scheduler started!")
 
 #定时任务引用模块----------------------------------------------
 
-def index(request):
-    content={}
-    content['token']=Wx_Access_Token.objects.all().last()
 
-    return render(request,'index.html',content)
 
 #django默认开启csrf防护，这里使用@csrf_exempt去掉防护    
 @csrf_exempt
@@ -145,17 +141,4 @@ class TextMsg(Msg):
         return XmlForm.format(**self.__dict)
     
 
- #获取access_token 只需要运行一次       
-def gettoken(request):
-    data={}
-    url_parame=urllib.parse.urlencode(data)
-    url="https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx32ed607e6951016c&secret=e65acf0f687135c8f953f26f52cdb2d0"
-    all_url=url+url_parame
-    data=urllib.request.urlopen(all_url).read()
-    record=json.loads(data.decode('UTF-8'))
-    #print(record['access_token'])
-    add_data=Wx_Access_Token(access_token = record['access_token'])
-    add_data.save()
-    str = '以获取最新的access_token'
-    return HttpResponse(str)
 
