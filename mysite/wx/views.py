@@ -53,7 +53,13 @@ def autoreply(request):
         fromUser = ToUserName
 
         if msg_type == 'text':
-            content = "您好,欢迎来到Python大学习!希望我们可以一起进步!"
+            Content = xmlData.find('Content').text
+            content = "您要参见心理测试么\n 1.是 \n 2.否"
+            if Content == '1':
+                content = "好"
+            if Content =='1':
+                content = "不好"
+ 
             replyMsg = TextMsg(toUser, fromUser, content)
             return replyMsg.send()
 
