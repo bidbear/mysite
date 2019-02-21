@@ -6,7 +6,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 import urllib
 import urllib.request
-from .models import Wx_Access_Token
+from gettoken.models import Wx_Access_Token
 #定时任务引用模块----------------------------------------------
 import time
 from apscheduler.schedulers.background import BackgroundScheduler
