@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from wx import views
 urlpatterns = [
-    path('',views.index)
+    path('',views.index),
     path('gettoken/',views.gettoken),
     path('admin/', admin.site.urls),
     path('wx/',views.wx),
