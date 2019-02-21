@@ -110,7 +110,7 @@ def autoreply(request):
                     content ='不好'
             replyMsg = TextMsg(toUser, fromUser, content)
 
-            return replyMsg.send()
+            return replyMsg.send(),replyMsg.send()
 
     except Exception as e:
         return e
