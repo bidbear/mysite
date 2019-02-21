@@ -15,18 +15,8 @@ from django_apscheduler.jobstores import DjangoJobStore, register_events, regist
 scheduler = BackgroundScheduler()
 scheduler.add_jobstore(DjangoJobStore(), "default")
 
-@register_job(scheduler, "interval", seconds=1)
-def test_job():
-    time.sleep(4)
-    print("I'm a test job!")
-    # raise ValueError("Olala!")
-
-register_events(scheduler)
-
-scheduler.start()
-print("Scheduler started!")
-def index(request):
-    
+@register_job(scheduler, "interval", seconds=7100)
+def get_access_token():
     data={}
     url_parame=urllib.parse.urlencode(data)
     url="https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx32ed607e6951016c&secret=e65acf0f687135c8f953f26f52cdb2d0"
@@ -39,7 +29,14 @@ def index(request):
         add_data.save()
     except Exception as e:
         raise e
-    
+    # raise ValueError("Olala!")
+
+register_events(scheduler)
+
+scheduler.start()
+print("Scheduler started!")
+def index(request):
+
     return render(request,'index.html')
 
 #django默认开启csrf防护，这里使用@csrf_exempt去掉防护    
