@@ -7,7 +7,7 @@ from django.shortcuts import render
 import urllib
 import urllib.request
 from .models import Wx_Access_Token
-#定时任务引用模块
+#定时任务引用模块----------------------------------------------
 import time
 from apscheduler.schedulers.background import BackgroundScheduler
 from django_apscheduler.jobstores import DjangoJobStore, register_events, register_job
@@ -35,9 +35,13 @@ register_events(scheduler)
 
 scheduler.start()
 print("Scheduler started!")
-def index(request):
 
-    return render(request,'index.html')
+#定时任务引用模块----------------------------------------------
+
+def index(request):
+    content={}
+    content['token']=Wx_Access_Token.objects.all().last()
+    return render(request,'index.html',content)
 
 #django默认开启csrf防护，这里使用@csrf_exempt去掉防护    
 @csrf_exempt
