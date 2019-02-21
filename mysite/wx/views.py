@@ -11,7 +11,7 @@ from .models import Wx_Access_Token
 import time
 from apscheduler.schedulers.background import BackgroundScheduler
 from django_apscheduler.jobstores import DjangoJobStore, register_events, register_job
-from .util import getrequest 
+#from .util import getrequest 
 scheduler = BackgroundScheduler()
 scheduler.add_jobstore(DjangoJobStore(), "default")
 
@@ -87,10 +87,17 @@ def autoreply(request):
         toUser = FromUserName
         fromUser = ToUserName
         #请求用户个人信息----------------
-       
+        data={}
+        url_parame=urllib.parse.urlencode(data)
+        url="https://api.weixin.qq.com/cgi-bin/user/info?access_token="+access_token+"&openid="+toUser+"&lang=zh_CN"
+        all_url=url+url_parame
+        data=urllib.request.urlopen(all_url).read()
+        print(data)
+        print('-------------------------------')
+        record=json.loads(data.decode('UTF-8')) 
+        print(record)
         #请求用户个人信息----------------
         if msg_type == 'text':
-            getrequest((toUser,access_token))
             if Content not in (1,2):
                 content = "你要接受心理测试么？\n 1.是 \n 2.否"
                 if Content == '1':
