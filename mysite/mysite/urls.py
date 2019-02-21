@@ -16,9 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from wx import views
+from gettoken import views as get_token
 urlpatterns = [
-    path('',views.index),
-    path('gettoken/',views.gettoken),
+    path('',get_token.index),
+    path('gettoken/',get_token.gettoken),
     path('admin/', admin.site.urls),
     path('wx/',views.wx),
 ]
