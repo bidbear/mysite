@@ -57,14 +57,15 @@ def autoreply(request):
             content = "您要参见心理测试么\n 1.是 \n 2.否"
             if Content == '1':
                 content = "好"
-            if Content =='1':
+            if Content =='2':
                 content = "不好"
  
             replyMsg = TextMsg(toUser, fromUser, content)
             return replyMsg.send()
 
         elif msg_type == 'image':
-            content = "图片已收到,谢谢"
+            PicUrl = xmlData.find('PicUrl').text
+            content = "图片已收到,谢谢 %s" % PicUrl 
             replyMsg = TextMsg(toUser, fromUser, content)
             return replyMsg.send()
         elif msg_type == 'voice':
