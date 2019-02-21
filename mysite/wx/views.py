@@ -72,9 +72,8 @@ import xml.etree.ElementTree as ET
 def autoreply(request):
     try:
         webData = request.body
-        print(webData)
         xmlData = ET.fromstring(webData)
-
+        print(webData)
         msg_type = xmlData.find('MsgType').text
         ToUserName = xmlData.find('ToUserName').text
         FromUserName = xmlData.find('FromUserName').text
