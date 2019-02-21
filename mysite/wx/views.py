@@ -7,36 +7,7 @@ from django.shortcuts import render
 import urllib
 import urllib.request
 from gettoken.models import Wx_Access_Token
-#定时任务引用模块----------------------------------------------
-import time
-from apscheduler.schedulers.background import BackgroundScheduler
-from django_apscheduler.jobstores import DjangoJobStore, register_events, register_job
-#from .util import getrequest 
-scheduler = BackgroundScheduler()
-scheduler.add_jobstore(DjangoJobStore(), "default")
-
-@register_job(scheduler, "interval", seconds=5600)
-def test_job():
-    data={}
-    url_parame=urllib.parse.urlencode(data)
-    url="https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx32ed607e6951016c&secret=e65acf0f687135c8f953f26f52cdb2d0"
-    all_url=url+url_parame
-    data=urllib.request.urlopen(all_url).read()
-    record=json.loads(data.decode('UTF-8'))
-    print(record['access_token'])
-    add_data=Wx_Access_Token(access_token = record['access_token'])
-    add_data.save()
-   
-    # raise ValueError("Olala!")
-
-register_events(scheduler)
-
-scheduler.start()
-print("Scheduler started!")
-
-#定时任务引用模块----------------------------------------------
-
-
+import xml.etree.ElementTree as ET
 
 #django默认开启csrf防护，这里使用@csrf_exempt去掉防护    
 @csrf_exempt
@@ -64,15 +35,12 @@ def wx(request):
         #处理post请求
         othercontent = autoreply(request)
         return HttpResponse(othercontent)
-    #get_(request)
-import xml.etree.ElementTree as ET
+
+# post请求处理
 def autoreply(request):
+    # 获取token
     data = Wx_Access_Token.objects.all().last()
     access_token = data.access_token
-    url = request.get_full_path()
-    print('##############')
-    print(url)
-    print('##############')
     try:
         webData = request.body
         xmlData = ET.fromstring(webData)
@@ -86,17 +54,7 @@ def autoreply(request):
 
         toUser = FromUserName
         fromUser = ToUserName
-        #请求用户个人信息----------------
-        data={}
-        url_parame=urllib.parse.urlencode(data)
-        url="https://api.weixin.qq.com/cgi-bin/user/info?access_token="+access_token+"&openid="+fromUser+"&lang=zh_CN"
-        all_url=url+url_parame
-        data=urllib.request.urlopen(all_url).read()
-        print(data)
-        print('-------------------------------')
-        record=json.loads(data.decode('UTF-8')) 
-        print(record)
-        #请求用户个人信息----------------
+  
         if msg_type == 'text':
             if Content not in (1,2):
                 content = "你要接受心理测试么？\n 1.是 \n 2.否"
@@ -111,6 +69,7 @@ def autoreply(request):
     except Exception as e:
         return e
 
+# 被动回复消息
 class Msg(object):
     def __init__(self, xmlData):
         self.ToUserName = xmlData.find('ToUserName').text
