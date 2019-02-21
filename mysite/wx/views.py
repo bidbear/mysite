@@ -46,7 +46,8 @@ def gettoken(request):
     #print(record['access_token'])
     add_data=Wx_Access_Token(access_token = record['access_token'])
     add_data.save()
-    return HttpResponse('<a href='/'>查看最新token</a>')
+    str = '<a href='/'>查看最新token</a>'
+    return HttpResponse(str)
 def index(request):
     content={}
     content['token']=Wx_Access_Token.objects.all().last()
