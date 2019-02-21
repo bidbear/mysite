@@ -89,7 +89,7 @@ def autoreply(request):
         #请求用户个人信息----------------
         data={}
         url_parame=urllib.parse.urlencode(data)
-        url="https://api.weixin.qq.com/cgi-bin/user/info?access_token="+int(access_token)+"&openid="+toUser+"&lang=zh_CN"
+        url="https://api.weixin.qq.com/cgi-bin/user/info?access_token="+access_token+"&openid="+toUser+"&lang=zh_CN"
         all_url=url+url_parame
         data=urllib.request.urlopen(all_url).read()
         print(data)
