@@ -114,10 +114,10 @@ class TextMsg(Msg):
         </xml>
         """
         return XmlForm.format(**self.__dict)
---------------------- 
-作者：Peace & Love 
-来源：CSDN 
-原文：https://blog.csdn.net/u013205877/article/details/77602853 
-版权声明：本文为博主原创文章，转载请附上博文链接！
+# --------------------- 
+# 作者：Peace & Love 
+# 来源：CSDN 
+# 原文：https://blog.csdn.net/u013205877/article/details/77602853 
+# 版权声明：本文为博主原创文章，转载请附上博文链接！
 
 
