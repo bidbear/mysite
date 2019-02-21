@@ -68,7 +68,8 @@ def autoreply(request):
             return replyMsg.send()
         if msg_type == 'image':
             PicUrl = xmlData.find('PicUrl').text
-            content='图片信息'+PicUrl
+            print(PicUrl)
+            content='图片信息'
             replyMsg = TextMsg(toUser, fromUser, content)
             return replyMsg.send()
     except Exception as e:
