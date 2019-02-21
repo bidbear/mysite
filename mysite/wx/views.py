@@ -36,18 +36,6 @@ print("Scheduler started!")
 
 #定时任务引用模块----------------------------------------------
 
-def gettoken(request):
-    data={}
-    url_parame=urllib.parse.urlencode(data)
-    url="https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx32ed607e6951016c&secret=e65acf0f687135c8f953f26f52cdb2d0"
-    all_url=url+url_parame
-    data=urllib.request.urlopen(all_url).read()
-    record=json.loads(data.decode('UTF-8'))
-    #print(record['access_token'])
-    add_data=Wx_Access_Token(access_token = record['access_token'])
-    add_data.save()
-    str = '以获取最新的access_token'
-    return HttpResponse(str)
 def index(request):
     content={}
     content['token']=Wx_Access_Token.objects.all().last()
@@ -81,11 +69,10 @@ def wx(request):
         return HttpResponse(othercontent)
     #get_(request)
 import xml.etree.ElementTree as ET
-
-@csrf_exempt
 def autoreply(request):
     try:
         webData = request.body
+        print(webData)
         xmlData = ET.fromstring(webData)
 
         msg_type = xmlData.find('MsgType').text
@@ -101,8 +88,8 @@ def autoreply(request):
         if msg_type == 'text':
             content = "您好,欢迎来到Python大学习!希望我们可以一起进步!"
             replyMsg = TextMsg(toUser, fromUser, content)
-            print ("成功了!!!!!!!!!!!!!!!!!!!")
-            print (replyMsg)
+            print "成功了!!!!!!!!!!!!!!!!!!!"
+            print replyMsg
             return replyMsg.send()
 
         elif msg_type == 'image':
@@ -131,8 +118,8 @@ def autoreply(request):
             replyMsg = TextMsg(toUser, fromUser, content)
             return replyMsg.send()
 
-    except Exception as e:
-        return e
+    except Exception, Argment:
+        return Argment
 
 class Msg(object):
     def __init__(self, xmlData):
@@ -162,3 +149,16 @@ class TextMsg(Msg):
         </xml>
         """
         return XmlForm.format(**self.__dict)
+ #获取access_token 只需要运行一次       
+def gettoken(request):
+    data={}
+    url_parame=urllib.parse.urlencode(data)
+    url="https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx32ed607e6951016c&secret=e65acf0f687135c8f953f26f52cdb2d0"
+    all_url=url+url_parame
+    data=urllib.request.urlopen(all_url).read()
+    record=json.loads(data.decode('UTF-8'))
+    #print(record['access_token'])
+    add_data=Wx_Access_Token(access_token = record['access_token'])
+    add_data.save()
+    str = '以获取最新的access_token'
+    return HttpResponse(str)
