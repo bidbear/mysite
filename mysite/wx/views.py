@@ -73,6 +73,10 @@ import xml.etree.ElementTree as ET
 def autoreply(request):
     data = Wx_Access_Token.objects.all().last()
     access_token = data.access_token
+    url = request.get_full_path()
+    print('##############')
+    print(url)
+    print('##############')
     try:
         webData = request.body
         xmlData = ET.fromstring(webData)
