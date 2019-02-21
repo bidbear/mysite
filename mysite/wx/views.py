@@ -90,7 +90,7 @@ def autoreply(request):
        
         #请求用户个人信息----------------
         if msg_type == 'text':
-            getrequest((toUser,access_token))
+            #getrequest((toUser,access_token))
             if Content not in (1,2):
                 content = "你要接受心理测试么？\n 1.是 \n 2.否"
                 if Content == '1':
