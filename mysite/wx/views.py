@@ -40,7 +40,7 @@ print("Scheduler started!")
 
 def index(request):
     content={}
-    content['token']=Wx_Access_Token.objects.all().last()
+    content['token']=Wx_Access_Token.objects.all()
     return render(request,'index.html',content)
 
 #django默认开启csrf防护，这里使用@csrf_exempt去掉防护    
