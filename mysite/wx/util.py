@@ -1,3 +1,6 @@
+import urllib
+import urllib.request
+
 def getrequest(toUser,access_token):
         data={}
         url_parame=urllib.parse.urlencode(data)
