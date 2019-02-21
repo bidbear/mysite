@@ -16,7 +16,7 @@ scheduler = BackgroundScheduler()
 scheduler.add_jobstore(DjangoJobStore(), "default")
 
 @register_job(scheduler, "interval", seconds=7100)
-def get_access_token():
+def test_job():
     data={}
     url_parame=urllib.parse.urlencode(data)
     url="https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx32ed607e6951016c&secret=e65acf0f687135c8f953f26f52cdb2d0"
