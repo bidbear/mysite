@@ -39,6 +39,7 @@ print("Scheduler started!")
 def index(request):
     content={}
     content['token']=Wx_Access_Token.objects.all().last()
+
     return render(request,'index.html',content)
 
 #django默认开启csrf防护，这里使用@csrf_exempt去掉防护    
@@ -70,10 +71,11 @@ def wx(request):
     #get_(request)
 import xml.etree.ElementTree as ET
 def autoreply(request):
+    data = Wx_Access_Token.objects.all().last()
+    access_token = data.access_token
     try:
         webData = request.body
         xmlData = ET.fromstring(webData)
-        print(webData)
         msg_type = xmlData.find('MsgType').text
         ToUserName = xmlData.find('ToUserName').text
         FromUserName = xmlData.find('FromUserName').text
@@ -83,38 +85,18 @@ def autoreply(request):
 
         toUser = FromUserName
         fromUser = ToUserName
-
+        #请求用户个人信息----------------
+        data={}
+        url_parame=urllib.parse.urlencode(data)
+        url="https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx32ed607e6951016c&secret=e65acf0f687135c8f953f26f52cdb2d0"
+        all_url=url+url_parame
+        data=urllib.request.urlopen(all_url).read()
+        record=json.loads(data.decode('UTF-8'))
+        #请求用户个人信息----------------
         if msg_type == 'text':
-            content = "您好,欢迎来到Python大学习!希望我们可以一起进步!"
+            content = "你要接受心理测试么？\n 1.是 \n 2.否"
             replyMsg = TextMsg(toUser, fromUser, content)
-            print("成功了!!!!!!!!!!!!!!!!!!!")
-            print(replyMsg)
-            return replyMsg.send()
-
-        elif msg_type == 'image':
-            content = "图片已收到,谢谢"
-            replyMsg = TextMsg(toUser, fromUser, content)
-            return replyMsg.send()
-        elif msg_type == 'voice':
-            content = "语音已收到,谢谢"
-            replyMsg = TextMsg(toUser, fromUser, content)
-            return replyMsg.send()
-        elif msg_type == 'video':
-            content = "视频已收到,谢谢"
-            replyMsg = TextMsg(toUser, fromUser, content)
-            return replyMsg.send()
-        elif msg_type == 'shortvideo':
-            content = "小视频已收到,谢谢"
-            replyMsg = TextMsg(toUser, fromUser, content)
-            return replyMsg.send()
-        elif msg_type == 'location':
-            content = "位置已收到,谢谢"
-            replyMsg = TextMsg(toUser, fromUser, content)
-            return replyMsg.send()
-        else:
-            msg_type == 'link'
-            content = "链接已收到,谢谢"
-            replyMsg = TextMsg(toUser, fromUser, content)
+            
             return replyMsg.send()
 
     except Exception as e:

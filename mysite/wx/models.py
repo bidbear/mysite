@@ -8,3 +8,4 @@ class Wx_Access_Token(models.Model):
     
     def __str__(self):
         return self.access_token
+
