@@ -64,16 +64,35 @@ def autoreply(request):
                 if Content == '2':
                     content ='不好'
             replyMsg = TextMsg(toUser, fromUser, content)
-
             return replyMsg.send()
-        if msg_type == 'image':
-            PicUrl = xmlData.find('PicUrl').text
-            print(PicUrl)
-            content='图片信息'
+
+        elif msg_type == 'image':
+            content = "图片已收到,谢谢"
+            replyMsg = TextMsg(toUser, fromUser, content)
+            return replyMsg.send()
+        elif msg_type == 'voice':
+            content = "语音已收到,谢谢"
+            replyMsg = TextMsg(toUser, fromUser, content)
+            return replyMsg.send()
+        elif msg_type == 'video':
+            content = "视频已收到,谢谢"
+            replyMsg = TextMsg(toUser, fromUser, content)
+            return replyMsg.send()
+        elif msg_type == 'shortvideo':
+            content = "小视频已收到,谢谢"
+            replyMsg = TextMsg(toUser, fromUser, content)
+            return replyMsg.send()
+        elif msg_type == 'location':
+            content = "位置已收到,谢谢"
+            replyMsg = TextMsg(toUser, fromUser, content)
+            return replyMsg.send()
+        else:
+            msg_type == 'link'
+            content = "链接已收到,谢谢"
             replyMsg = TextMsg(toUser, fromUser, content)
             return replyMsg.send()
     except Exception as e:
-        return e
+        return 404
 
 # 被动回复消息
 class Msg(object):
