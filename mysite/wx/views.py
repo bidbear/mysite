@@ -87,7 +87,7 @@ def autoreply(request):
         toUser = FromUserName
         fromUser = ToUserName
         #请求用户个人信息----------------
-        dealtext(FromUserName,access_token)
+        dealtext(FromUserName,access_token).getrequest()
         #请求用户个人信息----------------
         if msg_type == 'text':
 
