@@ -110,7 +110,7 @@ def autoreply(request):
                     content ='不好'
             replyMsg = TextMsg(toUser, fromUser, content)
 
-            return replyMsg.send(),replyMsg.send()
+            return replyMsg.send()
 
     except Exception as e:
         return e
@@ -132,15 +132,8 @@ class TextMsg(Msg):
         self.__dict['CreateTime'] = int(time.time())
         self.__dict['Content'] = content
 
-    def send(self):
+    def send1(self):
         XmlForm = """
-        <xml>
-        <ToUserName><![CDATA[{ToUserName}]]></ToUserName>
-        <FromUserName><![CDATA[{FromUserName}]]></FromUserName>
-        <CreateTime>{CreateTime}</CreateTime>
-        <MsgType><![CDATA[text]]></MsgType>
-        <Content><![CDATA[{Content}]]></Content>
-        </xml>
         <xml>
         <ToUserName><![CDATA[{ToUserName}]]></ToUserName>
         <FromUserName><![CDATA[{FromUserName}]]></FromUserName>
@@ -150,6 +143,22 @@ class TextMsg(Msg):
         </xml>
         """
         return XmlForm.format(**self.__dict)
+    def send2(self):
+        XmlForm = """
+        <xml>
+        <ToUserName><![CDATA[{ToUserName}]]></ToUserName>
+        <FromUserName><![CDATA[{FromUserName}]]></FromUserName>
+        <CreateTime>{CreateTime}</CreateTime>
+        <MsgType><![CDATA[text]]></MsgType>
+        <Content><![CDATA[{Content}]]></Content>
+        </xml>
+        """
+        return XmlForm.format(**self.__dict)
+    def send(self):
+        self.send2()
+        self.send1()
+
+
  #获取access_token 只需要运行一次       
 def gettoken(request):
     data={}
