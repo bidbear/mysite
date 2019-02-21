@@ -23,12 +23,10 @@ def test_job():
     all_url=url+url_parame
     data=urllib.request.urlopen(all_url).read()
     record=json.loads(data.decode('UTF-8'))
-    #print(record['access_token'])
-    try:
-        add_data=Wx_Access_Token(access_token=record)
-        add_data.save()
-    except Exception as e:
-        raise e
+    print(record['access_token'])
+    add_data=Wx_Access_Token(access_token = record['access_token'])
+    add_data.save()
+   
     # raise ValueError("Olala!")
 
 register_events(scheduler)
