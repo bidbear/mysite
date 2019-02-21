@@ -95,11 +95,11 @@ def autoreply(request):
         record=json.loads(data.decode('UTF-8'))
         #请求用户个人信息----------------
         if msg_type == 'text':
-            if Content not in (1,2)
+            if Content not in (1,2):
                 content = "你要接受心理测试么？\n 1.是 \n 2.否"
-                if Content == 1
+                if Content == 1:
                     content = '好'
-                if Content ==2
+                if Content ==2:
                     content ='不好'
             replyMsg = TextMsg(toUser, fromUser, content)
 
