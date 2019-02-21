@@ -141,6 +141,13 @@ class TextMsg(Msg):
         <MsgType><![CDATA[text]]></MsgType>
         <Content><![CDATA[{Content}]]></Content>
         </xml>
+        <xml>
+        <ToUserName><![CDATA[{ToUserName}]]></ToUserName>
+        <FromUserName><![CDATA[{FromUserName}]]></FromUserName>
+        <CreateTime>{CreateTime}</CreateTime>
+        <MsgType><![CDATA[text]]></MsgType>
+        <Content><![CDATA[{Content}]]></Content>
+        </xml>
         """
         return XmlForm.format(**self.__dict)
  #获取access_token 只需要运行一次       
