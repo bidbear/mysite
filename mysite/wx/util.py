@@ -1,5 +1,5 @@
 
-class DealText(toUser,access_token):
+class DealText(object):
     """docstring for """
     def __init__(self, toUser,access_token):
         self.toUser = toUser
@@ -15,3 +15,5 @@ class DealText(toUser,access_token):
         print('-------------------------------')
         record=json.loads(data.decode('UTF-8')) 
         print(record)
+
+        
