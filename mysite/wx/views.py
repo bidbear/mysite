@@ -15,7 +15,7 @@ from django_apscheduler.jobstores import DjangoJobStore, register_events, regist
 scheduler = BackgroundScheduler()
 scheduler.add_jobstore(DjangoJobStore(), "default")
 
-@register_job(scheduler, "interval", seconds=7100)
+@register_job(scheduler, "interval", seconds=3)
 def test_job():
     data={}
     url_parame=urllib.parse.urlencode(data)
@@ -37,15 +37,15 @@ print("Scheduler started!")
 #定时任务引用模块----------------------------------------------
 
 def index(request):
-    data={}
-    url_parame=urllib.parse.urlencode(data)
-    url="https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx32ed607e6951016c&secret=e65acf0f687135c8f953f26f52cdb2d0"
-    all_url=url+url_parame
-    data=urllib.request.urlopen(all_url).read()
-    record=json.loads(data.decode('UTF-8'))
-    print(record['access_token'])
-    add_data=Wx_Access_Token(access_token = record['access_token'])
-    add_data.save()
+    # data={}
+    # url_parame=urllib.parse.urlencode(data)
+    # url="https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx32ed607e6951016c&secret=e65acf0f687135c8f953f26f52cdb2d0"
+    # all_url=url+url_parame
+    # data=urllib.request.urlopen(all_url).read()
+    # record=json.loads(data.decode('UTF-8'))
+    # print(record['access_token'])
+    # add_data=Wx_Access_Token(access_token = record['access_token'])
+    # add_data.save()
     content={}
     content['token']=Wx_Access_Token.objects.all()
     return render(request,'index.html',content)
