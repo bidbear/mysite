@@ -118,8 +118,8 @@ def autoreply(request):
             replyMsg = TextMsg(toUser, fromUser, content)
             return replyMsg.send()
 
-    except Exception, Argment:
-        return Argment
+    except Exception as e:
+        return e
 
 class Msg(object):
     def __init__(self, xmlData):
