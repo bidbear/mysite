@@ -26,7 +26,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_apscheduler',
     'wx',
+
 ]
 
 MIDDLEWARE = [
@@ -112,3 +114,5 @@ STATICFILES_DIR = (
     os.path.join(BASE_DIR,'static'),
 )
 STATIC_ROOT  = os.path.join(BASE_DIR, 'static')#指定样式收集目录
+#定时任务配置
+APSCHEDULER_DATETIME_FORMAT =  "N j, Y, f:s a"  # Default

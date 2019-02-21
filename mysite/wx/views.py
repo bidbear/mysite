@@ -48,6 +48,7 @@ def wx(request):
         else:
           return HttpResponse("field")
     else:
+        #处理post请求
         othercontent = autoreply(request)
         return HttpResponse(othercontent)
     #get_(request)
