@@ -51,11 +51,15 @@ def autoreply(request):
         CreateTime = xmlData.find('CreateTime').text
         MsgType = xmlData.find('MsgType').text
         MsgId = xmlData.find('MsgId').text
-
+        Event = xmlData.find('Event').text
         toUser = FromUserName
         fromUser = ToUserName
-
-        if msg_type == 'text':
+        
+        if Event =='subscribe':
+            content = "感谢订阅，目前公众号具有图片识别的功能，请不要频繁使用。。。。"
+            replyMsg = TextMsg(toUser, fromUser, content)
+            return replyMsg.send()
+        elif msg_type == 'text':
             Content = xmlData.find('Content').text
             content = "我的现有功能如下，如果需要请输入相应的数字编号，或者文字：\n 1.图片转文字 \n 2.身份证照片转文字 "
             if Content in ['1','文字','转文字','图转文','图片转文字']:
