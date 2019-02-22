@@ -58,8 +58,10 @@ def autoreply(request):
         events = xmlData.find('Event').text
         
         if events =='subscribe':
-            global toUser
-            global fromUser
+            content = "感谢订阅，目前公众号具有图片识别的功能，请不要频繁使用。。。。"
+            replyMsg = TextMsg(toUser, fromUser, content)
+            return replyMsg.send()
+        elif events =='unsubscribe':
             content = "感谢订阅，目前公众号具有图片识别的功能，请不要频繁使用。。。。"
             replyMsg = TextMsg(toUser, fromUser, content)
             return replyMsg.send()
