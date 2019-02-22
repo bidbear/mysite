@@ -56,7 +56,10 @@ def getidCard():
     str ='\n'
     for key,values in  result['words_result'].items():
         list.append('%s : %s ' % (key,values['words']))
-    return str.join(list)
+    if len(list) < 6:
+        return '请上传正确的身份证图片'
+    else:
+        return str.join(list)
 #--------------保存图片-----------------------------------------------------------------------------------
 
 def SaveImg(picurl):
