@@ -71,8 +71,10 @@ def autoreply(request):
             PicUrl = xmlData.find('PicUrl').text
             if CONTENT == '1':
                 content = Toword(PicUrl)
-            if CONTENT == '2':
+            elif CONTENT == '2':
                 content = SaveImg(PicUrl)
+            else:
+                content = '图片没有文字？'
             replyMsg = TextMsg(toUser, fromUser, content)
             return replyMsg.send()
 
