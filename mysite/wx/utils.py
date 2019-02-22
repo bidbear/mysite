@@ -18,5 +18,10 @@ def Toword(picurl):
     options["detect_language"] = "true"
     """ 带参数调用网络图片文字识别, 图片参数为远程url图片 """
     result = client.webImageUrl(url, options)
+#定义list获取文字列表
+    content=[]
+    str=''
     for content in result['words_result']:
-        return content['words']
+         list.append(content['words'])
+#返回文字的列表字符串
+    return str.join(content) 
