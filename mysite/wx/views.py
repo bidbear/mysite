@@ -9,7 +9,7 @@ import urllib.request
 from gettoken.models import Wx_Access_Token
 import xml.etree.ElementTree as ET
 #导入处理百度api的模块
-from .utils import Toword
+from .utils import Toword,SaveImg
 #django默认开启csrf防护，这里使用@csrf_exempt去掉防护    
 @csrf_exempt
 def wx(request):
