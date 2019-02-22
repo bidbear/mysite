@@ -13,14 +13,14 @@ SECRET_KEY = 'F8DeFtQvkheZWXN3l2kTRysN0DsUKC7F'
 client = AipOcr(APP_ID, API_KEY, SECRET_KEY)
 #--------------获取access_token-----------------------------------------------------------------------------------
 
-def SaveImg(picurl):
+def SaveImg(picurl,fun):
     # client_id 为官网获取的AK， client_secret 为官网获取的SK 
     img_src = picurl
     response = requests.get(img_src)
     image = Image.open(BytesIO(response.content))
     image.save('/data/wwwroot/mysite/mysite/static/idCard/123.jpg')
     print('保存成功')
-    return getidCard()
+    return fun()
 #----------------------------------------------------------------------------------------------------------------
 def Toword(picurl):
     url = picurl
