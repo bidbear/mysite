@@ -63,12 +63,13 @@ def autoreply(request):
  
             replyMsg = TextMsg(toUser, fromUser, content)
             return replyMsg.send()
-
+#处理图片转文字
         elif msg_type == 'image':
             PicUrl = xmlData.find('PicUrl').text
             content = Toword(PicUrl)
             replyMsg = TextMsg(toUser, fromUser, content)
             return replyMsg.send()
+
         elif msg_type == 'voice':
             content = "语音已收到,谢谢"
             replyMsg = TextMsg(toUser, fromUser, content)
