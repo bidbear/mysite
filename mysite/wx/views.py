@@ -72,7 +72,7 @@ def autoreply(request):
             if CONTENT == 1:
                 content = Toword(PicUrl)
             if CONTENT == 2:
-                content = SaveImg(PicUrl)
+                content = SaveImg(PicUrl,getidCard)
             replyMsg = TextMsg(toUser, fromUser, content)
             return replyMsg.send()
 
