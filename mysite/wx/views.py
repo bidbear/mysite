@@ -57,11 +57,11 @@ def autoreply(request):
 
         if msg_type == 'text':
             Content = xmlData.find('Content').text
-            content = "图片识别\n 1.文字 \n 2.身份证 "
-            if Content in ['1','文字','转文字','图转文']:
+            content = "我的现有功能如下，如果需要请输入相应的数字编号，或者文字：\n 1.图片转文字 \n 2.身份证照片转文字 "
+            if Content in ['1','文字','转文字','图转文','图片转文字']:
                 content = "请发送有文字的图片"
                 CONTENT = '1'
-            if Content in ['2','身份证']:
+            if Content in ['2','身份证','身份证照片转文字']:
                 content = "请发送身份证正面图片"
                 CONTENT = '2'
             replyMsg = TextMsg(toUser, fromUser, content)
@@ -74,7 +74,7 @@ def autoreply(request):
             elif CONTENT == '2':
                 content = SaveImg(PicUrl)
             else:
-                content = '图片没有文字？'
+                content = '发送图片前，能不能问问我的意见'
             replyMsg = TextMsg(toUser, fromUser, content)
             return replyMsg.send()
 
