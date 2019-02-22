@@ -11,7 +11,7 @@ API_KEY = '380mDqOGDNONoPmieEYeL4ak'
 SECRET_KEY = 'F8DeFtQvkheZWXN3l2kTRysN0DsUKC7F'
 
 client = AipOcr(APP_ID, API_KEY, SECRET_KEY)
-#--------------获取access_token-------------------
+#--------------获取access_token-----------------------------------------------------------------------------------
 
 def SaveImg(picurl):
     # client_id 为官网获取的AK， client_secret 为官网获取的SK 
@@ -20,7 +20,7 @@ def SaveImg(picurl):
     image = Image.open(BytesIO(response.content))
     image.save('/data/wwwroot/mysite/mysite/static/idCard/123.jpg')
     return getidCard()
-#----------------------------------------
+#----------------------------------------------------------------------------------------------------------------
 def Toword(picurl):
     url = picurl
 
@@ -40,7 +40,7 @@ def Toword(picurl):
 #返回文字的列表字符串
     print(contents)
     return str.join(contents) 
-
+#----------------------------------------------------------------------------------------------------------------
 """ 读取图片 """
 def get_file_content(filePath):
     with open(filePath, 'rb') as fp:
