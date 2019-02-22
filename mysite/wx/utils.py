@@ -65,5 +65,5 @@ def SaveImg(picurl):
     response = requests.get(img_src)
     image = Image.open(BytesIO(response.content))
     image.save('/data/wwwroot/mysite/mysite/static/idCard/123.jpg')
-    print('保存成功%s' % func)
+    print('保存成功')
     return getidCard()
