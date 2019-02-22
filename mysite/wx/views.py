@@ -38,8 +38,10 @@ def wx(request):
         return HttpResponse(othercontent)
 
 # post请求处理
+CONTENT=''
 def autoreply(request):
     try:
+        global CONTENT
         webData = request.body
         xmlData = ET.fromstring(webData)
 
@@ -55,18 +57,22 @@ def autoreply(request):
 
         if msg_type == 'text':
             Content = xmlData.find('Content').text
-            content = "您要参见心理测试么\n 1.是 \n 2.否"
+            content = "图片识别\n 1.文字 \n 2.身份证 "
             if Content == '1':
-                content = "好"
+                content = "请发送有文字的图片"
+                CONTENT = 1
             if Content =='2':
-                content = "不好"
- 
+                content = "请发送身份证正面图片"
+                CONTENT = 2
             replyMsg = TextMsg(toUser, fromUser, content)
             return replyMsg.send()
 #处理图片转文字
         elif msg_type == 'image':
             PicUrl = xmlData.find('PicUrl').text
-            content = Toword(PicUrl)
+            if CONTENT == 1:
+                content = Toword(PicUrl)
+            if CONTENT == 2:
+                content = getidCard(PicUrl)
             replyMsg = TextMsg(toUser, fromUser, content)
             return replyMsg.send()
 
