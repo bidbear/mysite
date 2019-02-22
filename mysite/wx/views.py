@@ -54,10 +54,12 @@ def autoreply(request):
 
         toUser = FromUserName
         fromUser = ToUserName
+
+        events = xmlData.find('Event').text
         
-        Event = xmlData.find('Event').text
-        
-        if Event =='subscribe':
+        if events =='subscribe':
+            global toUser
+            global fromUser
             content = "感谢订阅，目前公众号具有图片识别的功能，请不要频繁使用。。。。"
             replyMsg = TextMsg(toUser, fromUser, content)
             return replyMsg.send()
