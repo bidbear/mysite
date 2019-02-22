@@ -1,12 +1,26 @@
 from aip import AipOcr
-
+import urllib
+import ssl
+import json
+import requests
+from PIL import Image
+from io import BytesIO
 """ 你的 APPID AK SK """
 APP_ID = '15604010'
 API_KEY = '380mDqOGDNONoPmieEYeL4ak'
 SECRET_KEY = 'F8DeFtQvkheZWXN3l2kTRysN0DsUKC7F'
 
 client = AipOcr(APP_ID, API_KEY, SECRET_KEY)
+#--------------获取access_token-------------------
 
+def SaveImg(picurl):
+    # client_id 为官网获取的AK， client_secret 为官网获取的SK 
+    img_src = picurl
+    response = requests.get(img_src)
+    image = Image.open(BytesIO(response.content))
+    image.save('/data/wwwroot/mysite/mysite/static/idCard/123.jpg')
+    return getidCard()
+#----------------------------------------
 def Toword(picurl):
     url = picurl
 
@@ -32,8 +46,8 @@ def get_file_content(filePath):
     with open(filePath, 'rb') as fp:
         return fp.read()
 # 获取身份证正面信息
-def getidCard(picurl):
-    image = get_file_content(picurl)
+def getidCard():
+    image = get_file_content('/data/wwwroot/mysite/mysite/static/idCard/123.jpg')
     idCardSide = "front"
 
     """ 调用身份证识别 """
