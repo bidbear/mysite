@@ -32,7 +32,7 @@ def get_file_content(filePath):
     with open(filePath, 'rb') as fp:
         return fp.read()
 # 获取身份证正面信息
-def getidCard(picurl)
+def getidCard(picurl):
     image = get_file_content(picurl)
     idCardSide = "front"
 
