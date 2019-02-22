@@ -26,3 +26,28 @@ def Toword(picurl):
 #返回文字的列表字符串
     print(contents)
     return str.join(contents) 
+
+""" 读取图片 """
+def get_file_content(filePath):
+    with open(filePath, 'rb') as fp:
+        return fp.read()
+# 获取身份证正面信息
+def getidCard(picurl)
+    image = get_file_content(picurl)
+    idCardSide = "front"
+
+    """ 调用身份证识别 """
+    client.idcard(image, idCardSide);
+
+    """ 如果有可选参数 """
+    options = {}
+    options["detect_direction"] = "true"
+    options["detect_risk"] = "false"
+
+    """ 带参数调用身份证识别 """
+    result = client.idcard(image, idCardSide, options)
+    list =[]
+    str ='\n'
+    for key,values in  result['words_result'].items():
+        list.append('%s : %s ' % (key,values['words']))
+    return str.join(list)
