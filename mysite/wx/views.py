@@ -60,18 +60,18 @@ def autoreply(request):
             content = "图片识别\n 1.文字 \n 2.身份证 "
             if Content in ['1','文字','转文字','图转文']:
                 content = "请发送有文字的图片"
-                CONTENT = 1
+                CONTENT = '1'
             if Content in ['2','身份证']:
                 content = "请发送身份证正面图片"
-                CONTENT = 2
+                CONTENT = '2'
             replyMsg = TextMsg(toUser, fromUser, content)
             return replyMsg.send()
 #处理图片转文字----------------------------------------------------
         elif msg_type == 'image':
             PicUrl = xmlData.find('PicUrl').text
-            if CONTENT == 1:
+            if CONTENT == '1':
                 content = Toword(PicUrl)
-            if CONTENT == 2:
+            if CONTENT == '2':
                 content = SaveImg(PicUrl)
             replyMsg = TextMsg(toUser, fromUser, content)
             return replyMsg.send()
