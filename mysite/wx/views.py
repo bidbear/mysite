@@ -66,13 +66,13 @@ def autoreply(request):
                 CONTENT = 2
             replyMsg = TextMsg(toUser, fromUser, content)
             return replyMsg.send()
-#处理图片转文字
+#处理图片转文字----------------------------------------------------
         elif msg_type == 'image':
             PicUrl = xmlData.find('PicUrl').text
             if CONTENT == 1:
                 content = Toword(PicUrl)
             if CONTENT == 2:
-                content = SaveImg()
+                content = SaveImg(PicUrl)
             replyMsg = TextMsg(toUser, fromUser, content)
             return replyMsg.send()
 
@@ -99,7 +99,8 @@ def autoreply(request):
             return replyMsg.send()
 
     except Exception as e:
-        return e
+        replyMsg = TextMsg(toUser, fromUser, '数据错误')
+        return replyMsg.send()
 
 class Msg(object):
     def __init__(self, xmlData):
