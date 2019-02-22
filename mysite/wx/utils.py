@@ -24,4 +24,4 @@ def Toword(picurl):
     for content in result['words_result']:
          contents.append(content['words'])
 #返回文字的列表字符串
-    return str.join(contents[:-2]) 
+    return str.join(contents[:-1]) 
