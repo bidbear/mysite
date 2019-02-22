@@ -58,10 +58,10 @@ def autoreply(request):
         if msg_type == 'text':
             Content = xmlData.find('Content').text
             content = "图片识别\n 1.文字 \n 2.身份证 "
-            if Content == '1':
+            if Content in ['1','文字'，'图片转文字'，'转文字'，'图转文']:
                 content = "请发送有文字的图片"
                 CONTENT = 1
-            if Content =='2':
+            if Content in ['2','身份证']:
                 content = "请发送身份证正面图片"
                 CONTENT = 2
             replyMsg = TextMsg(toUser, fromUser, content)
