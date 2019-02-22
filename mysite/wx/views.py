@@ -70,9 +70,10 @@ def autoreply(request):
         elif msg_type == 'image':
             PicUrl = xmlData.find('PicUrl').text
             if CONTENT == 1:
-                content = Toword(PicUrl)
+                # content = Toword(PicUrl)
+                content=CONTENT
             if CONTENT == 2:
-                content = getidCard(PicUrl)
+                content = CONTENT
             replyMsg = TextMsg(toUser, fromUser, content)
             return replyMsg.send()
 
