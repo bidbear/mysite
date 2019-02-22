@@ -8,7 +8,8 @@ import urllib
 import urllib.request
 from gettoken.models import Wx_Access_Token
 import xml.etree.ElementTree as ET
-
+#导入处理百度api的模块
+from .utils import Toword
 #django默认开启csrf防护，这里使用@csrf_exempt去掉防护    
 @csrf_exempt
 def wx(request):
@@ -65,7 +66,7 @@ def autoreply(request):
 
         elif msg_type == 'image':
             PicUrl = xmlData.find('PicUrl').text
-            content = "图片已收到,谢谢 %s" % PicUrl 
+            content = Toword(PicUrl)
             replyMsg = TextMsg(toUser, fromUser, content)
             return replyMsg.send()
         elif msg_type == 'voice':
