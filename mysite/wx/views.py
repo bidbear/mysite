@@ -72,7 +72,10 @@ def autoreply(request):
             if Content in ['1','文字','转文字','图转文','图片转文字']:
                 content = "请发送有文字的图片"
                 CONTENT = '1'
-            elif Content in ['2','身份证','身份证照片转文字']:
+            else:
+                content = "请按照提示发送正确的照片"
+                
+            if Content in ['2','身份证','身份证照片转文字']:
                 content = "请发送身份证正面图片"
                 CONTENT = '2'
             else:
