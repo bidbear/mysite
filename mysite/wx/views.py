@@ -49,7 +49,7 @@ def autoreply(request):
         ToUserName = xmlData.find('ToUserName').text
         FromUserName = xmlData.find('FromUserName').text
         CreateTime = xmlData.find('CreateTime').text
-        MsgId = xmlData.find('MsgId').text  
+        #MsgId = xmlData.find('MsgId').text  
         toUser = FromUserName
         fromUser = ToUserName
         
@@ -119,7 +119,7 @@ class Msg(object):
         self.FromUserName = xmlData.find('FromUserName').text
         self.CreateTime = xmlData.find('CreateTime').text
         self.MsgType = xmlData.find('MsgType').text
-        self.MsgId = xmlData.find('MsgId').text
+        #self.MsgId = xmlData.find('MsgId').text
 
 import time
 class TextMsg(Msg):
