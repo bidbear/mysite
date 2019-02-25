@@ -39,18 +39,18 @@ def wx(request):
 
 # post请求处理
 CONTENT=''
-def autoreply(request):
-    try:
+    def autoreply(request):
+   # try:
         global CONTENT
         webData = request.body
         xmlData = ET.fromstring(webData)
-
+        print(webData)
         msg_type = xmlData.find('MsgType').text
         ToUserName = xmlData.find('ToUserName').text
         FromUserName = xmlData.find('FromUserName').text
         CreateTime = xmlData.find('CreateTime').text
         MsgId = xmlData.find('MsgId').text
-        #dy_event = xmlData.find('Event').text        
+        dy_event = xmlData.find('Event').text        
         toUser = FromUserName
         fromUser = ToUserName
         print(dy_event)
@@ -109,9 +109,9 @@ def autoreply(request):
             replyMsg = TextMsg(toUser, fromUser, content)
             return replyMsg.send()
 
-    except Exception as e:
-        replyMsg = TextMsg(toUser, fromUser, '数据错误')
-        return replyMsg.send()
+    # except Exception as e:
+    #     replyMsg = TextMsg(toUser, fromUser, '数据错误')
+    #     return replyMsg.send()
 
 class Msg(object):
     def __init__(self, xmlData):
