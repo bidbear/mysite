@@ -49,15 +49,17 @@ def autoreply(request):
         ToUserName = xmlData.find('ToUserName').text
         FromUserName = xmlData.find('FromUserName').text
         CreateTime = xmlData.find('CreateTime').text
+        MsgId = xmlData.find('MsgId').text
+        dy_event = xmlData.find('Event').text        
         toUser = FromUserName
         fromUser = ToUserName
-        print(msg_type)
-        print('---------------------------------------------------------------')
-        if msg_type =='subscribe':
+        print(dy_event)
+        print('----------------------------------------------------------')
+        if dy_event =='subscribe':
             content = "感谢订阅，目前公众号具有图片识别的功能，请不要频繁使用。。。。"
             replyMsg = TextMsg(toUser, fromUser, content)
             return replyMsg.send()
-        elif msg_type =='unsubscribe':
+        elif dy_event =='unsubscribe':
             content = "感谢订阅，目前公众号具有图片识别的功能，请不要频繁使用。。。。"
             replyMsg = TextMsg(toUser, fromUser, content)
             return replyMsg.send()
@@ -116,6 +118,7 @@ class Msg(object):
         self.FromUserName = xmlData.find('FromUserName').text
         self.CreateTime = xmlData.find('CreateTime').text
         self.MsgType = xmlData.find('MsgType').text
+        self.MsgId = xmlData.find('MsgId').text
 
 import time
 class TextMsg(Msg):
