@@ -30,8 +30,10 @@ def Toword(picurl):
     for content in result['words_result']:
          contents.append(content['words'])
 #返回文字的列表字符串
-    print(contents)
-    return str.join(contents) 
+    if len(contents) < 1:
+         return '请上传带有文字的图片！！！'
+    else:
+        return str.join(contents)
 #----------------------------------------------------------------------------------------------------------------
 """ 读取图片 """
 def get_file_content(filePath):
@@ -57,7 +59,7 @@ def getidCard():
     for key,values in  result['words_result'].items():
         list.append('%s : %s ' % (key,values['words']))
     if len(list) < 6:
-        return '请上传正确的身份证图片'
+        return '请上传正确的身份证图片！！！'
     else:
         return str.join(list)
 #--------------保存图片-----------------------------------------------------------------------------------
