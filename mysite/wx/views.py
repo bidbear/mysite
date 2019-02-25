@@ -59,11 +59,12 @@ def autoreply(request):
             content = "感谢订阅，目前公众号具有图片识别的功能，请不要频繁使用。。。。"
             replyMsg = TextMsg(toUser, fromUser, content)
             return replyMsg.send()
-        elif dy_event =='unsubscribe':
-            content = "感谢订阅，目前公众号具有图片识别的功能，请不要频繁使用。。。。"
+        else:
+            content = "欢迎再次关注"
             replyMsg = TextMsg(toUser, fromUser, content)
-            return replyMsg.send()
-        elif msg_type == 'text':
+            print(replyMsg.send())
+        #用户发送消息判断
+        if msg_type == 'text':
             Content = xmlData.find('Content').text
             content = "我的现有功能如下，如果需要请输入相应的数字编号，或者文字：\n 1.图片转文字 \n 2.身份证照片转文字 "
             if Content in ['1','文字','转文字','图转文','图片转文字']:
@@ -103,8 +104,7 @@ def autoreply(request):
             replyMsg = TextMsg(toUser, fromUser, content)
             return replyMsg.send()
         else:
-            msg_type == 'link'
-            content = "链接已收到,谢谢"
+            content = "你到底 发的啥？"
             replyMsg = TextMsg(toUser, fromUser, content)
             return replyMsg.send()
 
