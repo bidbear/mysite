@@ -39,15 +39,17 @@ def wx(request):
 
 # post请求处理
 CONTENT=''
-events = xmlData.find('Event').text
-print(events)
-print('#######################################')
+
 def autoreply(request):
+    webData = request.body
+    xmlData = ET.fromstring(webData)
+    print(xmlData)
+    print('#######################################')
+    events = xmlData.find('Event').text
+    print(events)
+    print('#######################################')
     try:
         global CONTENT
-        webData = request.body
-        xmlData = ET.fromstring(webData)
-
         msg_type = xmlData.find('MsgType').text
         ToUserName = xmlData.find('ToUserName').text
         FromUserName = xmlData.find('FromUserName').text
