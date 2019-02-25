@@ -62,22 +62,22 @@ def autoreply(request):
                 replyMsg = TextMsg(toUser, fromUser, content)
                 return replyMsg.send()
             else:
-                content = "欢迎再次关注"
                 CONTENT=''
+                content = "欢迎再次关注"
                 replyMsg = TextMsg(toUser, fromUser, content)
                 print(replyMsg.send())
         #用户发送消息判断
         if msg_type == 'text':
             Content = xmlData.find('Content').text
             if Content in ['1','文字','转文字','图转文','图片转文字']:
-                content = "请发送有文字的图片"
                 CONTENT = '1'
+                content = "请发送有文字的图片"
             elif Content in ['2','身份证','身份证照片转文字']:
-                content = "请发送身份证正面图片"
                 CONTENT = '2'
+                content = "请发送身份证正面图片"     
             else:
-                content = "我的现有功能如下，如果需要请输入相应的数字编号，或者文字：\n 1.图片转文字 \n 2.身份证照片转文字"
                 CONTENT = ''
+                content = "我的现有功能如下，如果需要请输入相应的数字编号，或者文字：\n 1.图片转文字 \n 2.身份证照片转文字"
             replyMsg = TextMsg(toUser, fromUser, content)
             return replyMsg.send()
     #转文字----------------------------------------------------
@@ -88,6 +88,7 @@ def autoreply(request):
             elif CONTENT == '2':
                 content = SaveImg(PicUrl)
             else:
+                CONTENT = ''
                 content = '发送图片前，能不能问问我的意见'
             replyMsg = TextMsg(toUser, fromUser, content)
             return replyMsg.send()
