@@ -39,6 +39,9 @@ def wx(request):
 
 # post请求处理
 CONTENT=''
+events = xmlData.find('Event').text
+print(events)
+print('#######################################')
 def autoreply(request):
     try:
         global CONTENT
