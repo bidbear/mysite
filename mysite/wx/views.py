@@ -50,7 +50,7 @@ def autoreply(request):
         FromUserName = xmlData.find('FromUserName').text
         CreateTime = xmlData.find('CreateTime').text
         MsgId = xmlData.find('MsgId').text
-        dy_event = xmlData.find('Event').text        
+        #dy_event = xmlData.find('Event').text        
         toUser = FromUserName
         fromUser = ToUserName
         print(dy_event)
