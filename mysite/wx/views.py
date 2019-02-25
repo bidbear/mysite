@@ -63,6 +63,7 @@ def autoreply(request):
                 return replyMsg.send()
             else:
                 content = "欢迎再次关注"
+                CONTENT=''
                 replyMsg = TextMsg(toUser, fromUser, content)
                 print(replyMsg.send())
         #用户发送消息判断
