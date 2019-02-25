@@ -49,9 +49,10 @@ def autoreply(request):
         ToUserName = xmlData.find('ToUserName').text
         FromUserName = xmlData.find('FromUserName').text
         CreateTime = xmlData.find('CreateTime').text
-
         toUser = FromUserName
         fromUser = ToUserName
+        print(msg_type)
+        print('---------------------------------------------------------------')
         if msg_type =='subscribe':
             content = "感谢订阅，目前公众号具有图片识别的功能，请不要频繁使用。。。。"
             replyMsg = TextMsg(toUser, fromUser, content)
