@@ -77,6 +77,7 @@ def autoreply(request):
                 CONTENT = '2'
             else:
                 content = "我的现有功能如下，如果需要请输入相应的数字编号，或者文字：\n 1.图片转文字 \n 2.身份证照片转文字"
+                CONTENT = ''
             replyMsg = TextMsg(toUser, fromUser, content)
             return replyMsg.send()
     #转文字----------------------------------------------------
