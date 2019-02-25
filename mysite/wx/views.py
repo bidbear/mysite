@@ -55,14 +55,15 @@ def autoreply(request):
         fromUser = ToUserName
         print(dy_event)
         print('----------------------------------------------------------')
-        if dy_event =='subscribe':
-            content = "感谢订阅，目前公众号具有图片识别的功能，请不要频繁使用。。。。"
-            replyMsg = TextMsg(toUser, fromUser, content)
-            return replyMsg.send()
-        else:
-            content = "欢迎再次关注"
-            replyMsg = TextMsg(toUser, fromUser, content)
-            print(replyMsg.send())
+        if msg_type == 'event':
+            if dy_event =='subscribe':
+                content = "感谢订阅，目前公众号具有图片识别的功能，请不要频繁使用。。。。"
+                replyMsg = TextMsg(toUser, fromUser, content)
+                return replyMsg.send()
+            else:
+                content = "欢迎再次关注"
+                replyMsg = TextMsg(toUser, fromUser, content)
+                print(replyMsg.send())
         #用户发送消息判断
         if msg_type == 'text':
             Content = xmlData.find('Content').text
