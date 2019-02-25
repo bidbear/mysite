@@ -40,77 +40,78 @@ def wx(request):
 # post请求处理
 CONTENT=''
 def autoreply(request):
-   # try:
-    global CONTENT
-    webData = request.body
-    xmlData = ET.fromstring(webData)
-    print(webData)
-    msg_type = xmlData.find('MsgType').text
-    ToUserName = xmlData.find('ToUserName').text
-    FromUserName = xmlData.find('FromUserName').text
-    CreateTime = xmlData.find('CreateTime').text
-    MsgId = xmlData.find('MsgId').text
-    dy_event = xmlData.find('Event').text        
-    toUser = FromUserName
-    fromUser = ToUserName
-    print(dy_event)
-    print('----------------------------------------------------------')
-    if msg_type == 'event':
-        if dy_event =='subscribe':
-            content = "感谢订阅，目前公众号具有图片识别的功能，请不要频繁使用。。。。"
+    try:
+        global CONTENT
+        webData = request.body
+        xmlData = ET.fromstring(webData)
+        print(webData)
+        msg_type = xmlData.find('MsgType').text
+        ToUserName = xmlData.find('ToUserName').text
+        FromUserName = xmlData.find('FromUserName').text
+        CreateTime = xmlData.find('CreateTime').text
+        MsgId = xmlData.find('MsgId').text  
+        toUser = FromUserName
+        fromUser = ToUserName
+        
+        if msg_type == 'event':
+            dy_event = xmlData.find('Event').text  
+            print(dy_event)
+            print('----------------------------------------------------------')
+            if dy_event =='subscribe':
+                content = "感谢订阅，目前公众号具有图片识别的功能，请不要频繁使用。。。。"
+                replyMsg = TextMsg(toUser, fromUser, content)
+                return replyMsg.send()
+            else:
+                content = "欢迎再次关注"
+                replyMsg = TextMsg(toUser, fromUser, content)
+                print(replyMsg.send())
+        #用户发送消息判断
+        if msg_type == 'text':
+            Content = xmlData.find('Content').text
+            content = "我的现有功能如下，如果需要请输入相应的数字编号，或者文字：\n 1.图片转文字 \n 2.身份证照片转文字 "
+            if Content in ['1','文字','转文字','图转文','图片转文字']:
+                content = "请发送有文字的图片"
+                CONTENT = '1'
+            if Content in ['2','身份证','身份证照片转文字']:
+                content = "请发送身份证正面图片"
+                CONTENT = '2'
+            replyMsg = TextMsg(toUser, fromUser, content)
+            return replyMsg.send()
+    #转文字----------------------------------------------------
+        elif msg_type == 'image':
+            PicUrl = xmlData.find('PicUrl').text
+            if CONTENT == '1':
+                content = Toword(PicUrl)
+            elif CONTENT == '2':
+                content = SaveImg(PicUrl)
+            else:
+                content = '发送图片前，能不能问问我的意见'
+            replyMsg = TextMsg(toUser, fromUser, content)
+            return replyMsg.send()
+        elif msg_type == 'voice':
+            content = "语音已收到,谢谢"
+            replyMsg = TextMsg(toUser, fromUser, content)
+            return replyMsg.send()
+        elif msg_type == 'video':
+            content = "视频已收到,谢谢"
+            replyMsg = TextMsg(toUser, fromUser, content)
+            return replyMsg.send()
+        elif msg_type == 'shortvideo':
+            content = "小视频已收到,谢谢"
+            replyMsg = TextMsg(toUser, fromUser, content)
+            return replyMsg.send()
+        elif msg_type == 'location':
+            content = "位置已收到,谢谢"
             replyMsg = TextMsg(toUser, fromUser, content)
             return replyMsg.send()
         else:
-            content = "欢迎再次关注"
+            content = "你到底 发的啥？"
             replyMsg = TextMsg(toUser, fromUser, content)
-            print(replyMsg.send())
-    #用户发送消息判断
-    if msg_type == 'text':
-        Content = xmlData.find('Content').text
-        content = "我的现有功能如下，如果需要请输入相应的数字编号，或者文字：\n 1.图片转文字 \n 2.身份证照片转文字 "
-        if Content in ['1','文字','转文字','图转文','图片转文字']:
-            content = "请发送有文字的图片"
-            CONTENT = '1'
-        if Content in ['2','身份证','身份证照片转文字']:
-            content = "请发送身份证正面图片"
-            CONTENT = '2'
-        replyMsg = TextMsg(toUser, fromUser, content)
-        return replyMsg.send()
-#转文字----------------------------------------------------
-    elif msg_type == 'image':
-        PicUrl = xmlData.find('PicUrl').text
-        if CONTENT == '1':
-            content = Toword(PicUrl)
-        elif CONTENT == '2':
-            content = SaveImg(PicUrl)
-        else:
-            content = '发送图片前，能不能问问我的意见'
-        replyMsg = TextMsg(toUser, fromUser, content)
-        return replyMsg.send()
-    elif msg_type == 'voice':
-        content = "语音已收到,谢谢"
-        replyMsg = TextMsg(toUser, fromUser, content)
-        return replyMsg.send()
-    elif msg_type == 'video':
-        content = "视频已收到,谢谢"
-        replyMsg = TextMsg(toUser, fromUser, content)
-        return replyMsg.send()
-    elif msg_type == 'shortvideo':
-        content = "小视频已收到,谢谢"
-        replyMsg = TextMsg(toUser, fromUser, content)
-        return replyMsg.send()
-    elif msg_type == 'location':
-        content = "位置已收到,谢谢"
-        replyMsg = TextMsg(toUser, fromUser, content)
-        return replyMsg.send()
-    else:
-        content = "你到底 发的啥？"
-        replyMsg = TextMsg(toUser, fromUser, content)
-        return replyMsg.send()
+            return replyMsg.send()
 
-    # except Exception as e:
-    #     replyMsg = TextMsg(toUser, fromUser, '数据错误')
-    #     return replyMsg.send()
+    except Exception as e:
+        replyMsg = TextMsg(toUser, fromUser, '数据错误')
+        return replyMsg.send()
 
 class Msg(object):
     def __init__(self, xmlData):
